@@ -120,14 +120,14 @@ client.on("message", async message => {
 
       // reprend le membre cité
       let member = message.mentions.members.first();
-      let mention = message.mentions.users.first();
+      //let mention = message.mentions.users.first();
 
       //Détermine son role actuel
 
       // Détermine son rôle futur
       if (member.roles.has(recrue.id)){
         await message.channel.send(member + "  Bravo pour ta promotion en tant que **Membre - ⭐⭐**! Soit en digne!");$
-        client.sendMessage(member, "test dm");
+        message.member.send("Heya!");
 
         // Supression de l'ancien statuts
         let role_old = member.guild.roles.find(role => role.name === "Recrue - ⭐");
