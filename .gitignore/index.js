@@ -126,7 +126,8 @@ client.on("message", async message => {
 
       // Détermine son rôle futur
       if (member.roles.has(recrue.id)){
-        await message.channel.send(member + "  Bravo pour ta promotion **Membre - ⭐⭐**! Soit en digne!");
+        await message.channel.send(member + "  Bravo pour ta promotion **Membre - ⭐⭐**! Soit en digne!");$
+        await message.member.send("test privé");
 
         // Supression de l'ancien statuts
         let role_old = member.guild.roles.find(role => role.name === "Recrue - ⭐");
