@@ -180,7 +180,7 @@ client.on("message", async message => {
         member.addRole(role_new).catch(console.error);
 
       }else if (member.roles.has(leader.id)){
-        await message.channel.send(member + "#cff4def02#i0011340022  Le statut de Leader est le statut suprème, seul dieu est au dessus!");
+        await message.channel.send({embed: { color: 3447003 , description:  member + " Le statut de Leader est le statut suprème, seul dieu est au dessus!"}});
 
       }
       //effacement de la commande
