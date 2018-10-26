@@ -127,7 +127,7 @@ client.on("message", async message => {
       // Détermine son rôle futur
       if (member.roles.has(recrue.id)){
         await message.channel.send(member + "  Bravo pour ta promotion en tant que **Membre - ⭐⭐**! Soit en digne!");
-        message.member.createDM().then(channel => {
+        member.createDM().then(channel => {
           channel.send("Heya!");
         });
 
