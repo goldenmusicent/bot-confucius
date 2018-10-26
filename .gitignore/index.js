@@ -215,7 +215,21 @@ client.on("message", async message => {
 
       // Détermine son rôle futur
 
-      if (member.roles.has(elite.id)){
+      if (member.roles.has(membre.id)){
+        await message.channel.send(member + "  Exige beaucoup de toi-même et attends peu des autres. Ainsi beaucoup d'ennuis te seront épargnés. Tu as été rétrogradé au grade de **Recrue - ⭐**");
+        member.send("Soit fier de porter le blason de Recrue - ⭐ \n\n https://www.dropbox.com/s/32a9tyd9akj0ohl/RED%20-%201Star.png?dl=0");
+
+
+        // Supression de l'ancien statuts
+        let role_old = member.guild.roles.find(role => role.name === "Membre - ⭐⭐");
+        member.removeRole(role_old).catch(console.error);
+
+        // Ajout du nouveaus statuts
+        let role_new = member.guild.roles.find(role => role.name === "Recrue - ⭐");
+        member.addRole(role_new).catch(console.error);
+
+
+      }else if (member.roles.has(elite.id)){
         await message.channel.send(member + "  Exige beaucoup de toi-même et attends peu des autres. Ainsi beaucoup d'ennuis te seront épargnés. Tu as été rétrogradé au grade de **Membre - ⭐⭐**");
         member.send("Soit fier de porter le blason de Membre - ⭐⭐ \n\n https://www.dropbox.com/s/ap0vj6kgoht74q8/RED%20-%202Stars.png?dl=0");
 
