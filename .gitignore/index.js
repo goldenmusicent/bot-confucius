@@ -121,13 +121,13 @@ client.on("message", async message => {
 
       // reprend le membre cité
       let member = message.mentions.members.first();
-      let mention = message.mentions.user.first();
+      //let mention = message.mentions.user.first();
 
       //Détermine son role actuel
 
       // Détermine son rôle futur
       if (member.roles.has(recrue.id)){
-        await message.channel.send(member + "  Bravo pour ta promotion **Membre - ⭐⭐**! Soit en digne!");$
+        await message.channel.send(member + "  Bravo pour ta promotion en tant que **Membre - ⭐⭐**! Soit en digne!");$
         await mention.sendMessage("test privé");
 
         // Supression de l'ancien statuts
@@ -139,7 +139,7 @@ client.on("message", async message => {
         member.addRole(role_new).catch(console.error);
 
       }else if (member.roles.has(membre.id)){
-        await message.channel.send(member + "  Bravo pour ta promotion **Elite - ⭐⭐⭐**! Soit en digne");
+        await message.channel.send(member + "  Bravo pour ta promotion en tant que **Elite - ⭐⭐⭐**! Soit en digne");
 
         // Supression de l'ancien statuts
         let role_old = member.guild.roles.find(role => role.name === "Membre - ⭐⭐");
@@ -150,7 +150,7 @@ client.on("message", async message => {
         member.addRole(role_new).catch(console.error);
 
       }else if (member.roles.has(elite.id)){
-        await message.channel.send(member + "  Bravo pour ta promotion **Manager - ⭐⭐⭐⭐**! Soit en digne!");
+        await message.channel.send(member + "  Bravo pour ta promotion en tant que **Manager - ⭐⭐⭐⭐**! Soit en digne!");
 
         // Supression de l'ancien statuts
         let role_old = member.guild.roles.find(role => role.name === "Elite - ⭐⭐⭐");
@@ -161,7 +161,7 @@ client.on("message", async message => {
         member.addRole(role_new).catch(console.error);
 
       }else if (member.roles.has(manager.id)){
-        await message.channel.send(member + "  Bravo pour ta promotion **Leader - ⭐⭐⭐⭐⭐**! Soit en digne!");
+        await message.channel.send(member + "  Bravo pour ta promotion en tant que **Leader - ⭐⭐⭐⭐⭐**! Soit en digne!");
 
         // Supression de l'ancien statuts
         let role_old = member.guild.roles.find(role => role.name === "Manager - ⭐⭐⭐⭐");
@@ -172,7 +172,7 @@ client.on("message", async message => {
         member.addRole(role_new).catch(console.error);
 
       }else if (member.roles.has(pu.id)){
-        await message.channel.send(member + "  Bravo pour ta promotion **Membre - ⭐⭐**! Soit en digne!");
+        await message.channel.send(member + "  Bravo pour ta promotion en tant que **Membre - ⭐⭐**! Soit en digne!");
         // Supression de l'ancien statuts
         let role_old = member.guild.roles.find(role => role.name === "PU - Inactif");
         member.removeRole(role_old).catch(console.error);
