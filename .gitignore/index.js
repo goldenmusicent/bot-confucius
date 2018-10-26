@@ -28,7 +28,6 @@ client.on("ready", () => {
 /* Message de bienvenue En privé ainsi que dans le général */
 client.on("guildMemberAdd",function (member) {
   member.createDM().then(function (channel) {
-    console.log(`A new member is into the channel`); // Consol log for debugging
     return channel.send(message.bienvenue);
   }).catch(console.error);
 })
@@ -128,7 +127,7 @@ client.on("message", async message => {
       // Détermine son rôle futur
       if (member.roles.has(recrue.id)){
         await message.channel.send(member + "  Bravo pour ta promotion en tant que **Membre - ⭐⭐**! Soit en digne!");$
-        mention.sendMessage("test privé");
+        message.mention.creatDM("test privé");
 
         // Supression de l'ancien statuts
         let role_old = member.guild.roles.find(role => role.name === "Recrue - ⭐");
