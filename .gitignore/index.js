@@ -126,7 +126,7 @@ client.on("message", async message => {
 
       // Détermine son rôle futur
       if (member.roles.has(recrue.id)){
-        await message.channel.send(member + "#cff4def02#i0011340022  Bravo pour ta promotion **Membre - ⭐⭐**! Soit en digne!");
+        await message.channel.send(member + "  Bravo pour ta promotion **Membre - ⭐⭐**! Soit en digne!");
 
         // Supression de l'ancien statuts
         let role_old = member.guild.roles.find(role => role.name === "Recrue - ⭐");
@@ -137,7 +137,7 @@ client.on("message", async message => {
         member.addRole(role_new).catch(console.error);
 
       }else if (member.roles.has(membre.id)){
-        await message.channel.send(member + "#cff4def02#i0011340022  Bravo pour ta promotion **Elite - ⭐⭐⭐**! Soit en digne");
+        await message.channel.send(member + "  Bravo pour ta promotion **Elite - ⭐⭐⭐**! Soit en digne");
 
         // Supression de l'ancien statuts
         let role_old = member.guild.roles.find(role => role.name === "Membre - ⭐⭐");
@@ -148,7 +148,7 @@ client.on("message", async message => {
         member.addRole(role_new).catch(console.error);
 
       }else if (member.roles.has(elite.id)){
-        await message.channel.send(member + "#cff4def02#i0011340022  Bravo pour ta promotion **Manager - ⭐⭐⭐⭐**! Soit en digne!");
+        await message.channel.send(member + "  Bravo pour ta promotion **Manager - ⭐⭐⭐⭐**! Soit en digne!");
 
         // Supression de l'ancien statuts
         let role_old = member.guild.roles.find(role => role.name === "Elite - ⭐⭐⭐");
@@ -159,7 +159,7 @@ client.on("message", async message => {
         member.addRole(role_new).catch(console.error);
 
       }else if (member.roles.has(manager.id)){
-        await message.channel.send(member + "#cff4def02#i0011340022  Bravo pour ta promotion **Leader - ⭐⭐⭐⭐⭐**! Soit en digne!");
+        await message.channel.send(member + "  Bravo pour ta promotion **Leader - ⭐⭐⭐⭐⭐**! Soit en digne!");
 
         // Supression de l'ancien statuts
         let role_old = member.guild.roles.find(role => role.name === "Manager - ⭐⭐⭐⭐");
@@ -170,7 +170,7 @@ client.on("message", async message => {
         member.addRole(role_new).catch(console.error);
 
       }else if (member.roles.has(pu.id)){
-        await message.channel.send(member + "#cff4def02#i0011340022  Bravo pour ta promotion **Membre - ⭐⭐**! Soit en digne!");
+        await message.channel.send(member + "  Bravo pour ta promotion **Membre - ⭐⭐**! Soit en digne!");
         // Supression de l'ancien statuts
         let role_old = member.guild.roles.find(role => role.name === "PU - Inactif");
         member.removeRole(role_old).catch(console.error);
@@ -180,7 +180,7 @@ client.on("message", async message => {
         member.addRole(role_new).catch(console.error);
 
       }else if (member.roles.has(leader.id)){
-        await message.channel.send(member + "#cff4def02#i0011340022  Le statut de Leader est le statut suprème, seul dieu est au dessus!");
+        await message.channel.send(member + "  Le statut de Leader est le statut suprème, seul dieu est au dessus!");
 
       }
       //effacement de la commande
@@ -210,7 +210,7 @@ client.on("message", async message => {
       // Détermine son rôle futur
 
       if (member.roles.has(elite.id)){
-        await message.channel.send(member + "#cffff0000#i00011440013  Exige beaucoup de toi-même et attends peu des autres. Ainsi beaucoup d'ennuis te seront épargnés. Tu as été rétrogradé au grade de **Membre - ⭐⭐**");
+        await message.channel.send(member + "  Exige beaucoup de toi-même et attends peu des autres. Ainsi beaucoup d'ennuis te seront épargnés. Tu as été rétrogradé au grade de **Membre - ⭐⭐**");
 
         // Supression de l'ancien statuts
         let role_old = member.guild.roles.find(role => role.name === "Elite - ⭐⭐⭐");
@@ -221,7 +221,7 @@ client.on("message", async message => {
         member.addRole(role_new).catch(console.error);
 
       }else if (member.roles.has(manager.id)){
-        await message.channel.send(member + "#cffff0000#i00011440013  Exige beaucoup de toi-même et attends peu des autres. Ainsi beaucoup d'ennuis te seront épargnés. Tu as été rétrogradé au grade de **Elite - ⭐⭐⭐**");
+        await message.channel.send(member + "#  Exige beaucoup de toi-même et attends peu des autres. Ainsi beaucoup d'ennuis te seront épargnés. Tu as été rétrogradé au grade de **Elite - ⭐⭐⭐**");
 
         // Supression de l'ancien statuts
         let role_old = member.guild.roles.find(role => role.name === "Manager - ⭐⭐⭐⭐");
@@ -232,7 +232,7 @@ client.on("message", async message => {
         member.addRole(role_new).catch(console.error);
 
       }else if (member.roles.has(leader.id)){
-        await message.channel.send(member + "#cffff0000#i00011440013  Exige beaucoup de toi-même et attends peu des autres. Ainsi beaucoup d'ennuis te seront épargnés. Tu as été rétrogradé au grade de **Manager - ⭐⭐⭐⭐**");
+        await message.channel.send(member + "  Exige beaucoup de toi-même et attends peu des autres. Ainsi beaucoup d'ennuis te seront épargnés. Tu as été rétrogradé au grade de **Manager - ⭐⭐⭐⭐**");
 
         // Supression de l'ancien statuts
         let role_old = member.guild.roles.find(role => role.name === "Leader - ⭐⭐⭐⭐⭐");
@@ -243,7 +243,7 @@ client.on("message", async message => {
         member.addRole(role_new).catch(console.error);
 
       }else if (member.roles.has(recrue.id)){
-        await message.channel.send("Solarized Red: #dc322f```diff Ne te méprend pas jeune padawan! Les recrues sont les pilliers de notre comunautée!```");
+        await message.channel.send("Ne te méprend pas jeune padawan! Les recrues sont les pilliers de notre comunautée!");
 
       }
       //effacement de la commande
