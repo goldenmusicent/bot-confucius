@@ -121,7 +121,7 @@ client.on("message", async message => {
 
       // reprend le membre cité
       let member = message.mentions.members.first();
-      //let mention = message.mentions.user.first();
+      let mention = message.mentions.users.first();
 
       //Détermine son role actuel
 
