@@ -180,7 +180,7 @@ client.on("message", async message => {
         member.addRole(role_new).catch(console.error);
 
       }else if (member.roles.has(leader.id)){
-        await message.channel.send({embed: { color: 3447003 , description:  member + " Le statut de Leader est le statut suprème, seul dieu est au dessus!"}});
+        await message.channel.send(member + "#cff4def02#i0011340022  Le statut de Leader est le statut suprème, seul dieu est au dessus!");
 
       }
       //effacement de la commande
@@ -243,7 +243,7 @@ client.on("message", async message => {
         member.addRole(role_new).catch(console.error);
 
       }else if (member.roles.has(recrue.id)){
-        await message.channel.send("#cffff0000#i00011440013 Ne te méprend pas jeune padawan! Les recrues sont les pilliers de notre comunautée!");
+        await message.channel.send("Solarized Red: #dc322f```diff Ne te méprend pas jeune padawan! Les recrues sont les pilliers de notre comunautée!```");
 
       }
       //effacement de la commande
