@@ -127,7 +127,7 @@ client.on("message", async message => {
       // Détermine son rôle futur
       if (member.roles.has(recrue.id)){
         await message.channel.send(member + "  Bravo pour ta promotion en tant que **Membre - ⭐⭐**! Soit en digne!");
-        member.send("Heya!");
+        member.send("Soit fier de porter le blason de Membre - ⭐⭐ \n\n https://www.dropbox.com/s/ap0vj6kgoht74q8/RED%20-%202Stars.png?dl=0");
 
         // Supression de l'ancien statuts
         let role_old = member.guild.roles.find(role => role.name === "Recrue - ⭐");
@@ -139,6 +139,7 @@ client.on("message", async message => {
 
       }else if (member.roles.has(membre.id)){
         await message.channel.send(member + "  Bravo pour ta promotion en tant que **Elite - ⭐⭐⭐**! Soit en digne");
+        member.send("Soit fier de porter le blason d'Elite - ⭐⭐⭐ \n\n https://www.dropbox.com/s/2twgs18ed650lqd/RED%20-%203Stars.png?dl=0");
 
         // Supression de l'ancien statuts
         let role_old = member.guild.roles.find(role => role.name === "Membre - ⭐⭐");
@@ -150,6 +151,8 @@ client.on("message", async message => {
 
       }else if (member.roles.has(elite.id)){
         await message.channel.send(member + "  Bravo pour ta promotion en tant que **Manager - ⭐⭐⭐⭐**! Soit en digne!");
+        member.send("Soit fier de porter le blason de Manager - ⭐⭐⭐⭐ \n\n https://www.dropbox.com/s/zjdlmuqn474o9en/RED%20-%204Stars.png?dl=0");
+
 
         // Supression de l'ancien statuts
         let role_old = member.guild.roles.find(role => role.name === "Elite - ⭐⭐⭐");
@@ -161,6 +164,8 @@ client.on("message", async message => {
 
       }else if (member.roles.has(manager.id)){
         await message.channel.send(member + "  Bravo pour ta promotion en tant que **Leader - ⭐⭐⭐⭐⭐**! Soit en digne!");
+        member.send("Soit fier de porter le blason de Leader - ⭐⭐⭐⭐⭐ \n\n https://www.dropbox.com/s/tnsvqrpcllm8bt6/RED%20-%205Stars.png?dl=0");
+
 
         // Supression de l'ancien statuts
         let role_old = member.guild.roles.find(role => role.name === "Manager - ⭐⭐⭐⭐");
@@ -212,6 +217,8 @@ client.on("message", async message => {
 
       if (member.roles.has(elite.id)){
         await message.channel.send(member + "  Exige beaucoup de toi-même et attends peu des autres. Ainsi beaucoup d'ennuis te seront épargnés. Tu as été rétrogradé au grade de **Membre - ⭐⭐**");
+        member.send("Soit fier de porter le blason de Membre - ⭐⭐ \n\n https://www.dropbox.com/s/ap0vj6kgoht74q8/RED%20-%202Stars.png?dl=0");
+
 
         // Supression de l'ancien statuts
         let role_old = member.guild.roles.find(role => role.name === "Elite - ⭐⭐⭐");
@@ -223,6 +230,8 @@ client.on("message", async message => {
 
       }else if (member.roles.has(manager.id)){
         await message.channel.send(member + "#  Exige beaucoup de toi-même et attends peu des autres. Ainsi beaucoup d'ennuis te seront épargnés. Tu as été rétrogradé au grade de **Elite - ⭐⭐⭐**");
+        member.send("Soit fier de porter le blason d'Elite - ⭐⭐⭐ \n\n https://www.dropbox.com/s/2twgs18ed650lqd/RED%20-%203Stars.png?dl=0");
+
 
         // Supression de l'ancien statuts
         let role_old = member.guild.roles.find(role => role.name === "Manager - ⭐⭐⭐⭐");
@@ -234,6 +243,8 @@ client.on("message", async message => {
 
       }else if (member.roles.has(leader.id)){
         await message.channel.send(member + "  Exige beaucoup de toi-même et attends peu des autres. Ainsi beaucoup d'ennuis te seront épargnés. Tu as été rétrogradé au grade de **Manager - ⭐⭐⭐⭐**");
+        member.send("Soit fier de porter le blason de Manager - ⭐⭐⭐⭐ \n\n https://www.dropbox.com/s/zjdlmuqn474o9en/RED%20-%204Stars.png?dl=0");
+
 
         // Supression de l'ancien statuts
         let role_old = member.guild.roles.find(role => role.name === "Leader - ⭐⭐⭐⭐⭐");
