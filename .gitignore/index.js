@@ -326,9 +326,9 @@ client.on("message", async message => {
 
 
   //Envoie de message programmées en date et en heures
-  if (commande === 'timedmessage'){
-    const flag_bonjour_message = 1;
-    const flag_Rappel_réunion = 1;
+  if (commande === 'tm'){
+
+    //Flag d'activation de message à implémenter
 
     message.channel.send("Message automatique activé");
 
@@ -340,13 +340,13 @@ client.on("message", async message => {
 
 
         // Message Bonjour:
-        if(heure === 9 && flag_bonjour_message === 1) {
+        if(heure === 9) {
                 if(minutes === 30)
                     message.channel.send("Bonjours à tous, une bonne journée!").catch(console.error);
         }
 
         // Message Rappel réunion:
-        if((jour === 20 || jour === 22) && flag_Rappel_réunion === 1) {
+        if(jour === 20 || jour === 22) {
             if(heure === 20) {
                 if(minutes === 30)
                     message.channel.send("N’oubliez pas que la réunion mensuelle a lieu le dernier vendredi du mois. Votre présence n’est pas obligatoire mais fortement souhaité!").catch(console.error)
