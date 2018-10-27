@@ -340,7 +340,7 @@ client.on("message", async message => {
 
         // Message Bonjour:
         if(heure === 11) {
-          if(minutes === 9){
+          if(minutes === 15){
             message.channel.send("Bonjours à tous, une bonne journée!").catch(console.error);
           }
         }
@@ -353,7 +353,7 @@ client.on("message", async message => {
               }
             }
         }
-    }, 6000);
+    }, 60000);
     //effacement de la commande
     message.delete();
   }
