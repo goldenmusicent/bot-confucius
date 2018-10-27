@@ -322,7 +322,7 @@ client.on("message", async message => {
     var interval = setInterval (function () {
       // use the message's channel (TextChannel) to send a new message
       message.channel.send("Bonjours à tous, une bonne journée!").catch(console.error);
-      }, 1 * 1000 * 60 * time_interval); //heures
+      }, 1 * 1000 * 60 * 60 * time_interval); //heures
 
     //effacement de la commande
     message.delete();
