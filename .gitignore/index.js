@@ -332,15 +332,16 @@ client.on("message", async message => {
     message.channel.send("Message automatique activé");
 
     setInterval(function(){
+        message.channel.send("Debug 1");
         const date    = new Date();
         const jour    = date.getDate();
         const heure   = date.getHours();
         const minutes = date.getMinutes();
-
+        message.channel.send("Dlt 1min");
 
         // Message Bonjour:
         if(heure === 11) {
-          if(minutes === 19){
+          if(minutes === 21){
             message.channel.send("Bonjours à tous, une bonne journée!").catch(console.error);
           }
         }
