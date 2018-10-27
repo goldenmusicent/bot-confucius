@@ -311,14 +311,14 @@ client.on("message", async message => {
   }
 
   /* Message programmé a intervalle régulier */
-  if (message.content === "$loop") { 
+  if (command === "loop") { 
     var interval = setInterval (function () {
       // use the message's channel (TextChannel) to send a new message
       message.channel.send("123").catch(console.error);
       }, 1 * 1000); 
     }
 
-    
+
 }else {
        // not allowed access
        m = await message.channel.send("Permissions insuffisantes!");
