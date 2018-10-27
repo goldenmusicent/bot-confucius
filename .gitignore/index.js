@@ -340,12 +340,9 @@ client.on("message", async message => {
         var heure   = date.getHours();
         var minutes = date.getMinutes();
 
-        var TM1 = new Date('2013-05-23').setHours(12,12,12,12);;
-        var TM2 = TM1.getHours()
-
 
         // Message Bonjour:o
-        if(heure === TM2) {
+        if(heure === '12') {
           //if(minutes === 28){
             message.channel.send("Bonjours à tous, une bonne journée!");
           //}
@@ -359,7 +356,7 @@ client.on("message", async message => {
               }
             }
         }
-        message.channel.send("Debug 2" + (heure) + "   "+ minutes + "   "+ TM2);
+        message.channel.send("Debug 2" + (heure) + "   "+ minutes);
     }, 10000); //Call Every minutes
 
     /*    
