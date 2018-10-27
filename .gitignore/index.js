@@ -326,7 +326,7 @@ client.on("message", async message => {
 
 
   //Envoie de message programmées en date et en heures
-  if (command === 'timedmessage'){
+  if (command === 'tm'){
 
     //Flag d'activation de message à implémenter
     const flag_bonjour_message = 1;
@@ -343,7 +343,7 @@ client.on("message", async message => {
 
         // Message Bonjour:
         if(heure === 11 && flag_bonjour_message === 1) {
-                if(minutes === 0)
+                if(minutes === 3)
                     message.channel.send("Bonjours à tous, une bonne journée!").catch(console.error);
         }
 
@@ -351,10 +351,10 @@ client.on("message", async message => {
         if((jour === 20 || jour === 22) && flag_Rappel_réunion === 1) {
             if(heure === 20) {
                 if(minutes === 30)
-                    message.channel.send("N’oubliez pas que la réunion mensuelle a lieu le dernier vendredi du mois. Votre présence n’est pas obligatoire mais fortement souhaité!").catch(console.error)
+                    message.channel.send("N’oubliez pas que la réunion mensuelle a lieu le dernier vendredi du mois. \nVotre présence n’est pas obligatoire mais fortement souhaité!").catch(console.error)
             }
         }
-    }, 1 * 1000 * 60 * 30);
+    }, 6000);
     //effacement de la commande
     message.delete();
   }
@@ -387,12 +387,12 @@ client.on("message", async message => {
         value: "Envoie le message dans le générale"
       },
       {
-        name: "timedmessage",
-        value: "Active les messages timer"
+        name: "tm",
+        value: "Active les messages automatique"
       },
       {
         name: "bonjour [heure]",
-        value: "Répétition du message Bonjour, toutes les X heures entre 1 et 24"
+        value: "Répétition du message Bonjour, toutes les X heures entre 1 et 24 // Plus implémenter"
       },
       {
         name: "promo @[nom]",
