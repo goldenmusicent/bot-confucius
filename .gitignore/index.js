@@ -337,7 +337,7 @@ client.on("message", async message => {
 
         var date    = new Date();
         var jour    = date.getDate();
-        const heure   = date.getHours();
+        var heure   = date.getHours();
         var minutes = date.getMinutes();
 
 
@@ -347,7 +347,7 @@ client.on("message", async message => {
           //if(minutes === 28){
             message.channel.send("Bonjours à tous, une bonne journée!");
           //}
-        }*/
+        } */
 
         // Message Rappel réunion:
         if(jour === 20 || jour === 22) {
