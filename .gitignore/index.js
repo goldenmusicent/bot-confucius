@@ -315,13 +315,17 @@ client.on("message", async message => {
 
     const time_interval = parseInt(args[0], 10);
 
+    // Détection de l'arguments
     if(!time_interval || time_interval < 1 || time_interval > 25)
         return message.reply("A quel interval (heure) veut tu répéter le message: Bonjours à tous, une bonne journée!");
 
     var interval = setInterval (function () {
       // use the message's channel (TextChannel) to send a new message
       message.channel.send("Bonjours à tous, une bonne journée!").catch(console.error);
-      }, 1 * 1000 * 60 * 60 * time_interval); //heures
+      }, 1 * 1000 * 60 * time_interval); //heures
+
+    //effacement de la commande
+    message.delete();
     }
 
 
