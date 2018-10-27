@@ -23,14 +23,6 @@ client.on("ready", () => {
 });
 
 
-/***************
-Définition des variables globale
-****************/
-var flag_bonjour_message;
-var flag_Rappel_réunion;
-/***************
-
-
 /* Message de bienvenue En privé ainsi que dans le général */
 client.on("guildMemberAdd",function (member) {
   member.createDM().then(function (channel) {
@@ -315,7 +307,7 @@ client.on("message", async message => {
     }
   }
 
-  /* Message: Bonjour à tous, une bonne journée! programmé a intervalle régulier */
+  /* Message: Bonjour à tous, une bonne journée! programmé a intervalle régulier
   if (command === "bonjour") { 
 
     if ( var flag_bonjour_message = 0){
@@ -330,12 +322,13 @@ client.on("message", async message => {
     //effacement de la commande
     message.delete();
     }
+    */
 
 
   //Envoie de message programmées en date et en heures
-  if (commande === 'timedmessage'){
-    flag_bonjour_message = 0;
-    flag_Rappel_réunion = 0;
+  if (commande === 'timedmessageon'){
+    var flag_bonjour_message = 1;
+    var flag_Rappel_réunion = 1;
 
     message.channel.send("Message automatique activé");
 
