@@ -310,6 +310,7 @@ client.on("message", async message => {
     }
   }
 
+    
   /* Message programmé a intervalle régulier */
   if (command === "loop") { 
     var interval = setInterval (function () {
