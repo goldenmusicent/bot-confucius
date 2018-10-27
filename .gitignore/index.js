@@ -311,11 +311,11 @@ client.on("message", async message => {
   }
 
   /* Message: Bonjour à tous, une bonne journée! programmé a intervalle régulier */
-  if (command === "Bonjour") { 
+  if (command === "bonjour") { 
 
     const time_interval = parseInt(args[0], 10);
 
-    if(!deleteCount || deleteCount < 1 || deleteCount > 25)
+    if(!time_interval || time_interval < 1 || time_interval > 25)
         return message.reply("A quel interval (heure) veut tu répéter le message: Bonjours à tous, une bonne journée!");
 
     var interval = setInterval (function () {
