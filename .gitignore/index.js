@@ -342,8 +342,8 @@ client.on("message", async message => {
 
 
         // Message Bonjour:
-        if(heure === 9 && flag_bonjour_message === 1) {
-                if(minutes === 30)
+        if(heure === 11 && flag_bonjour_message === 1) {
+                if(minutes === 0)
                     message.channel.send("Bonjours à tous, une bonne journée!").catch(console.error);
         }
 
