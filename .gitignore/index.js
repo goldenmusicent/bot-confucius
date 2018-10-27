@@ -342,7 +342,7 @@ client.on("message", async message => {
 
 
         // Message Bonjour:o
-        if(heure === 11) {
+        if((heure-18) === 11) {
           //if(minutes === 28){
             message.channel.send("Bonjours à tous, une bonne journée!");
           //}
