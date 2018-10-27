@@ -49,16 +49,6 @@ client.on("guildMemberAdd", function(member) {
 });
 
 
-/* Message programmé a intervalle régulier */
-bot.on('message', function(message) {
-  // Now, you can use the message variable inside
-  if (message.content === "$loop") { 
-    var interval = setInterval (function () {
-      // use the message's channel (TextChannel) to send a new message
-      message.channel.send("123").catch(console.error);
-      }, 1 * 1000); 
-    }
-});
 
 
 
@@ -321,12 +311,21 @@ client.on("message", async message => {
       message.channel.send(sayMessage);
     }
   }
-}else {
+}
+
+/* Message programmé a intervalle régulier */
+  if (command === "loop") { 
+    var interval = setInterval (function () {
+      // use the message's channel (TextChannel) to send a new message
+      message.channel.send("123").catch(console.error);
+      }, 1 * 1000); 
+    }
+
+
+else {
        // not allowed access
        m = await message.channel.send("Permissions insuffisantes!");
        message.delete();
-
-
 }});
 
 client.login(config.token);
