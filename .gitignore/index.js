@@ -329,9 +329,6 @@ client.on("message", async message => {
   if (command === 'tm'){
 
     //Flag d'activation de message à implémenter
-    const flag_bonjour_message = 1;
-    const flag_Rappel_réunion = 1;
-
     message.channel.send("Message automatique activé");
 
     setInterval(function(){
@@ -342,16 +339,18 @@ client.on("message", async message => {
 
 
         // Message Bonjour:
-        if(heure === 11 && flag_bonjour_message === 1) {
-                if(minutes === 3)
-                    message.channel.send("Bonjours à tous, une bonne journée!").catch(console.error);
+        if(heure === 9) {
+          if(minutes === 30){
+            message.channel.send("Bonjours à tous, une bonne journée!").catch(console.error);
+          }
         }
 
         // Message Rappel réunion:
-        if((jour === 20 || jour === 22) && flag_Rappel_réunion === 1) {
+        if(jour === 20 || jour === 22) {
             if(heure === 20) {
-                if(minutes === 30)
-                    message.channel.send("N’oubliez pas que la réunion mensuelle a lieu le dernier vendredi du mois. \nVotre présence n’est pas obligatoire mais fortement souhaité!").catch(console.error)
+              if(minutes === 30){
+                message.channel.send("N’oubliez pas que la réunion mensuelle a lieu le dernier vendredi du mois. \nVotre présence n’est pas obligatoire mais fortement souhaité!").catch(console.error)
+              }
             }
         }
     }, 6000);
