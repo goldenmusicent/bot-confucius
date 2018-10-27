@@ -326,9 +326,9 @@ client.on("message", async message => {
 
 
   //Envoie de message programmées en date et en heures
-  if (commande === 'timedmessageon'){
-    var flag_bonjour_message = 1;
-    var flag_Rappel_réunion = 1;
+  if (commande === 'timedmessage'){
+    const flag_bonjour_message = 1;
+    const flag_Rappel_réunion = 1;
 
     message.channel.send("Message automatique activé");
 
