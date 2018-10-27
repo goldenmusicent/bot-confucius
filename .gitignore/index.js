@@ -26,11 +26,9 @@ client.on("ready", () => {
 /***************
 Définition des variables globale
 ****************/
-var flag_bonjour_message = 0;
-var flag_Rappel_réunion = 0;
+var flag_bonjour_message;
+var flag_Rappel_réunion;
 /***************
-
-
 
 
 /* Message de bienvenue En privé ainsi que dans le général */
@@ -336,15 +334,16 @@ client.on("message", async message => {
 
   //Envoie de message programmées en date et en heures
   if (commande === 'timedmessage'){
+    flag_bonjour_message = 0;
+    flag_Rappel_réunion = 0;
 
     message.channel.send("Message automatique activé");
-    
+
     setInterval(function(){
         var date    = new Date();
         var jour    = date.getDate();
         var heure   = date.getHours();
         var minutes = date.getMinutes();
-
 
 
         // Message Bonjour:
