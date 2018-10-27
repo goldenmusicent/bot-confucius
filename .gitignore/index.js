@@ -20,9 +20,44 @@ client.on("ready", () => {
   // docs refer to as the "ClientUser".
   client.user.setActivity(`Serving ${client.guilds.size} servers`);
   client.user.setGame('I am your host');
-
-
 });
+
+
+/***************
+Définition des variables globale
+****************/
+var flag_bonjour_message = 0;
+var flag_Rappel_réunion = 0;
+/***************
+
+
+/***************
+Envoie de message programmées en date et en heures
+****************/
+setInterval(function(){
+    var date    = new Date();
+    var jour    = date.getDate();
+    var heure   = date.getHours();
+    var minutes = date.getMinutes();
+
+
+
+    // Message Bonjour:
+    if(heure === 9 && flag_bonjour_message === 1) {
+            if(minutes === 30)
+                message.channel.send("Bonjours à tous, une bonne journée!").catch(console.error);
+    }
+
+    // Message Rappel réunion:
+    if((jour === 20 || jour === 22) && flag_Rappel_réunion === 1) {
+        if(heure === 20) {
+            if(minutes === 30)
+                message.channel.send("N’oubliez pas que la réunion mensuelle a lieu le dernier vendredi du mois. Votre présence n’est pas obligatoire mais fortement souhaité!").catch(console.error)
+        }
+    }
+}, 1 * 1000 * 60 * 30);
+/***************
+
 
 
 /* Message de bienvenue En privé ainsi que dans le général */
@@ -40,7 +75,6 @@ client.on('guildMemberAdd', member => {
   // Send the message, mentioning the member
   channel.send(`Salut ${member}, bienvenue dans la **VIII Familly** :tada::hugging: !`);
 });
-
 
 /* Définit le nouveau membre en recrue */
 client.on("guildMemberAdd", function(member) {
@@ -313,24 +347,21 @@ client.on("message", async message => {
   /* Message: Bonjour à tous, une bonne journée! programmé a intervalle régulier */
   if (command === "bonjour") { 
 
-    const time_interval = parseInt(args[0], 10);
+    if ( var flag_bonjour_message = 0){
+      var flag_bonjour_message = 1;
+      message.channel.send("Message \"Bonjour\" automatique ON, chaque jours à 9h30");
 
-    // Détection de l'arguments
-    if(!time_interval || time_interval < 1 || time_interval > 25)
-        return message.reply("A quel interval (heure) veux-tu répéter le message: Bonjours à tous, une bonne journée!");
-
-    message.channel.send("Bonjours à tous, une bonne journée!").catch(console.error);
-
-    var interval = setInterval (function () {
-      // use the message's channel (TextChannel) to send a new message
-      message.channel.send("Bonjours à tous, une bonne journée!").catch(console.error);
-      }, 1 * 1000 * 60 * 60 * time_interval); //heures
+    }else{
+      var flag_bonjour_message = 0;
+      message.channel.send("Message \"Bonjour\" automatique OFF");
+    }
 
     //effacement de la commande
     message.delete();
     }
 
-  /* Envoie les commandes de confucius */
+
+  /* Envoie la liste de commandes de Confucius[BOT] */
   if (command === "help") { 
     message.channel.send({embed: {
     color: 3447003,
@@ -339,10 +370,22 @@ client.on("message", async message => {
       icon_url: client.user.avatarURL
     },
     title: "HELP - Confucius",
-    description: "Les commande ci-dessous précédé d'un \"+\" permettent d'effectuer différentes action",
+    description: "Les commande ci-dessous précédé d'un \"+\" permettent d'effectuer différentes actions",
     fields: [{
+        name: "help",
+        value: "Affiche l'interface d'aide au commande confucius"
+      },
+      {
         name: "purge [nombre]",
         value: "Nombre de message a supprimer, entre 2 et 100"
+      },
+      {
+        name: "ping",
+        value: "Renvoie un message avec le ping, et le Ping API de liaison du bot"
+      },
+      {
+        name: "say [message]",
+        value: "Envoie le message dans le générale"
       },
       {
         name: "bonjour [heure]",
@@ -356,14 +399,7 @@ client.on("message", async message => {
         name: "retro @[nom]",
         value: "Rétrogradation d’un joueur un grade en dessous, envoie message privé avec le logo"
       },
-      {
-        name: "ping",
-        value: "Renvoie un message avec le ping, et le Ping API de liaison du bot"
-      },
-      {
-        name: "say [message]",
-        value: "Envoie le message dans le générale"
-      }
+      
     ],
     timestamp: new Date(),
     footer: {
@@ -383,10 +419,6 @@ client.on("message", async message => {
        // not allowed access
        m = await message.channel.send("Permissions insuffisantes!");
        message.delete();
-
-
 }});
 
 client.login(config.token);
-
-
