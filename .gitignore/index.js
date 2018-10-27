@@ -341,8 +341,8 @@ client.on("message", async message => {
         var minutes = date.getMinutes();
 
 
-        // Message Bonjour:
-        if(new Date().getHours() === 11) {
+        // Message Bonjour:o
+        if(heure == '11') {
           //if(minutes === 28){
             message.channel.send("Bonjours à tous, une bonne journée!");
           //}
