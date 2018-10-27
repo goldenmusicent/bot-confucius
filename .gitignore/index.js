@@ -319,6 +319,8 @@ client.on("message", async message => {
     if(!time_interval || time_interval < 1 || time_interval > 25)
         return message.reply("A quel interval (heure) veut tu répéter le message: Bonjours à tous, une bonne journée!");
 
+    message.channel.send("Bonjours à tous, une bonne journée!").catch(console.error);
+    
     var interval = setInterval (function () {
       // use the message's channel (TextChannel) to send a new message
       message.channel.send("Bonjours à tous, une bonne journée!").catch(console.error);
