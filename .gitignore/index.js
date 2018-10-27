@@ -310,12 +310,18 @@ client.on("message", async message => {
     }
   }
 
-  /* Message programmé a intervalle régulier */
-  if (command === "loop") { 
+  /* Message: Bonjour à tous, une bonne journée! programmé a intervalle régulier */
+  if (command === "Bonjour") { 
+
+    const time_interval = parseInt(args[0], 10);
+
+    if(!deleteCount || deleteCount < 1 || deleteCount > 25)
+        return message.reply("A quel interval (heure) veut tu répéter le message: Bonjours à tous, une bonne journée!");
+
     var interval = setInterval (function () {
       // use the message's channel (TextChannel) to send a new message
-      message.channel.send("123").catch(console.error);
-      }, 60 * 1000); //minutes
+      message.channel.send("Bonjours à tous, une bonne journée!").catch(console.error);
+      }, 1 * 1000 * 60 * 60 * time_interval); //heures
     }
 
 
