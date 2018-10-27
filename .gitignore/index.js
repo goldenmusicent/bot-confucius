@@ -341,12 +341,13 @@ client.on("message", async message => {
         var minutes = date.getMinutes();
 
 
-        // Message Bonjour:o
+        // Message Bonjour: 
+        /*
         if(heure === '12') {
           //if(minutes === 28){
             message.channel.send("Bonjours à tous, une bonne journée!");
           //}
-        }
+        }*/
 
         // Message Rappel réunion:
         if(jour === 20 || jour === 22) {
