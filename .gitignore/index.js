@@ -335,25 +335,25 @@ client.on("message", async message => {
 
         message.channel.send("Debug 1");
 
-        const date    = new Date();
-        const jour    = date.getDate();
-        const heure   = date.getHours();
-        const minutes = date.getMinutes();
+        var date    = new Date();
+        var jour    = date.getDate();
+        var heure   = date.getHours();
+        var minutes = date.getMinutes();
 
         message.channel.send("Dlt 1min");
 
         // Message Bonjour:
         if(heure === 11) {
-          if(minutes === 28){
-            message.channel.send("Bonjours à tous, une bonne journée!").catch(console.error);
-          }
+          //if(minutes === 28){
+            message.channel.send("Bonjours à tous, une bonne journée!");
+          //}
         }
 
         // Message Rappel réunion:
         if(jour === 20 || jour === 22) {
             if(heure === 20) {
               if(minutes === 30){
-                message.channel.send("N’oubliez pas que la réunion mensuelle a lieu le dernier vendredi du mois. \nVotre présence n’est pas obligatoire mais fortement souhaité!").catch(console.error)
+                message.channel.send("N’oubliez pas que la réunion mensuelle a lieu le dernier vendredi du mois. \nVotre présence n’est pas obligatoire mais fortement souhaité!");
               }
             }
         }
