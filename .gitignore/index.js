@@ -50,8 +50,6 @@ client.on("guildMemberAdd", function(member) {
 
 
 
-
-
 /* Ajout - Effacement du Boat sur un guild */
 client.on("guildCreate", guild => {
   // This event triggers when the bot joins a guild.
@@ -311,21 +309,22 @@ client.on("message", async message => {
       message.channel.send(sayMessage);
     }
   }
-}
 
-/* Message programmé a intervalle régulier */
-  if (command === "loop") { 
+  /* Message programmé a intervalle régulier */
+  if (message.content === "$loop") { 
     var interval = setInterval (function () {
       // use the message's channel (TextChannel) to send a new message
       message.channel.send("123").catch(console.error);
       }, 1 * 1000); 
     }
 
-
-else {
+    
+}else {
        // not allowed access
        m = await message.channel.send("Permissions insuffisantes!");
        message.delete();
+
+
 }});
 
 client.login(config.token);
