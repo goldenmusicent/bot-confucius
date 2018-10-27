@@ -243,7 +243,7 @@ client.on("message", async message => {
         member.addRole(role_new).catch(console.error);
 
       }else if (member.roles.has(manager.id)){
-        await message.channel.send(member + "#  Exige beaucoup de toi-même et attends peu des autres. Ainsi beaucoup d'ennuis te seront épargnés. Tu as été rétrogradé au grade de **Elite - ⭐⭐⭐**");
+        await message.channel.send(member + "  Exige beaucoup de toi-même et attends peu des autres. Ainsi beaucoup d'ennuis te seront épargnés. Tu as été rétrogradé au grade de **Elite - ⭐⭐⭐**");
         member.send("Soit fier de porter le blason d'Elite - ⭐⭐⭐ \n\n https://www.dropbox.com/s/2twgs18ed650lqd/RED%20-%203Stars.png?dl=0");
 
 
@@ -317,14 +317,62 @@ client.on("message", async message => {
 
     // Détection de l'arguments
     if(!time_interval || time_interval < 1 || time_interval > 25)
-        return message.reply("A quel interval (heure) veut tu répéter le message: Bonjours à tous, une bonne journée!");
+        return message.reply("A quel interval (heure) veux-tu répéter le message: Bonjours à tous, une bonne journée!");
 
     message.channel.send("Bonjours à tous, une bonne journée!").catch(console.error);
-    
+
     var interval = setInterval (function () {
       // use the message's channel (TextChannel) to send a new message
       message.channel.send("Bonjours à tous, une bonne journée!").catch(console.error);
       }, 1 * 1000 * 60 * 60 * time_interval); //heures
+
+    //effacement de la commande
+    message.delete();
+    }
+
+  /* Envoie les commandes de confucius */
+  if (command === "help") { 
+    message.channel.send({embed: {
+    color: 3447003,
+    author: {
+      name: client.user.username,
+      icon_url: client.user.avatarURL
+    },
+    title: "HELP - Confucius",
+    description: "Les commande ci-dessous précédé d'un \"+\" permettent d'effectuer différentes action",
+    fields: [{
+        name: "purge [nombre]",
+        value: "Nombre de message a supprimer, entre 2 et 100"
+      },
+      {
+        name: "bonjour [heure]",
+        value: "Répétition du message Bonjour, toutes les X heures entre 1 et 24"
+      },
+      {
+        name: "promo @[nom]",
+        value: "Promotion d’un joueur un grade au dessus, envoie message privé avec le logo"
+      },
+      {
+        name: "retro @[nom]",
+        value: "Rétrogradation d’un joueur un grade en dessous, envoie message privé avec le logo"
+      },
+      {
+        name: "ping",
+        value: "Renvoie un message avec le ping, et le Ping API de liaison du bot"
+      },
+      {
+        name: "say [message]",
+        value: "Envoie le message dans le générale"
+      }
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: client.user.avatarURL,
+      text: "© Confucius"
+    }
+  }
+});
+
 
     //effacement de la commande
     message.delete();
