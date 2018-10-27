@@ -343,8 +343,8 @@ client.on("message", async message => {
         message.channel.send("Dlt 1min");
 
         // Message Bonjour:
-        if(heure === 9) {
-          if(minutes === 30){
+        if(heure === 11) {
+          if(minutes === 28){
             message.channel.send("Bonjours à tous, une bonne journée!").catch(console.error);
           }
         }
@@ -357,7 +357,7 @@ client.on("message", async message => {
               }
             }
         }
-    }, 60000); //Call Every minutes
+    }, 30000); //Call Every minutes
 
     /*    
       var interval = setInterval (function () {
