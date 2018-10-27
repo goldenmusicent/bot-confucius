@@ -359,8 +359,8 @@ client.on("message", async message => {
               }
             }
         }
-        message.channel.send("Debug 2" + (heure-18) + "   "+ minutes);
-    }, 30000); //Call Every minutes
+        message.channel.send("Debug 2" + (heure) + "   "+ minutes + "   "+ TM2);
+    }, 10000); //Call Every minutes
 
     /*    
       var interval = setInterval (function () {
