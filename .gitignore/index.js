@@ -315,7 +315,7 @@ client.on("message", async message => {
     var interval = setInterval (function () {
       // use the message's channel (TextChannel) to send a new message
       message.channel.send("123").catch(console.error);
-      }, 1 * 1000 * 60); //minutes
+      }, 60 * 1000); //minutes
     }
 
 
