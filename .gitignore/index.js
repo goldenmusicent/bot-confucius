@@ -49,6 +49,18 @@ client.on("guildMemberAdd", function(member) {
 });
 
 
+/* Message programmé a intervalle régulier */
+bot.on('message', function(message) {
+  // Now, you can use the message variable inside
+  if (message.content === "$loop") { 
+    var interval = setInterval (function () {
+      // use the message's channel (TextChannel) to send a new message
+      message.channel.send("123").catch(console.error);
+      }, 1 * 1000); 
+    }
+});
+
+
 
 /* Ajout - Effacement du Boat sur un guild */
 client.on("guildCreate", guild => {
@@ -138,7 +150,7 @@ client.on("message", async message => {
         member.addRole(role_new).catch(console.error);
 
       }else if (member.roles.has(membre.id)){
-        await message.channel.send(member + "  Bravo pour ta promotion en tant que **Elite - ⭐⭐⭐**! Soit en digne");
+        await message.channel.send(member + "  Bravo pour ta promotion en tant que **Elite - ⭐⭐⭐**! Soit en digne!");
         member.send("Soit fier de porter le blason d'Elite - ⭐⭐⭐ \n\n https://www.dropbox.com/s/2twgs18ed650lqd/RED%20-%203Stars.png?dl=0");
 
         // Supression de l'ancien statuts
