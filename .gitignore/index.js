@@ -337,7 +337,7 @@ client.on("message", async message => {
 
         var date    = new Date();
         var jour    = date.getDate();
-        var heure   = date.getHours();
+        const heure   = date.getHours();
         var minutes = date.getMinutes();
 
 
