@@ -331,17 +331,20 @@ client.on("message", async message => {
     //Flag d'activation de message à implémenter
     message.channel.send("Message automatique activé");
 
-    setInterval(function(){
+    var interval = setInterval (function () {
+
         message.channel.send("Debug 1");
+
         const date    = new Date();
         const jour    = date.getDate();
         const heure   = date.getHours();
         const minutes = date.getMinutes();
+
         message.channel.send("Dlt 1min");
 
         // Message Bonjour:
-        if(heure === 11) {
-          if(minutes === 21){
+        if(heure === 9) {
+          if(minutes === 30){
             message.channel.send("Bonjours à tous, une bonne journée!").catch(console.error);
           }
         }
@@ -354,7 +357,14 @@ client.on("message", async message => {
               }
             }
         }
-    }, 60000);
+    }, 60000); //Call Every minutes
+
+    /*    
+      var interval = setInterval (function () {
+      message.channel.send("Bonjours à tous, une bonne journée!").catch(console.error);
+      }, 1 * 1000 * 60 * 60 * time_interval); //heures
+      */
+
     //effacement de la commande
     message.delete();
   }
