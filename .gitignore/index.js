@@ -340,7 +340,7 @@ client.on("message", async message => {
         var heure   = date.getHours();
         var minutes = date.getMinutes();
 
-        var TM1 = new Date().setHours(12,12,12,12);;
+        var TM1 = new Date('2013-05-23').setHours(12,12,12,12);;
         var TM2 = TM1.getHours()
 
 
