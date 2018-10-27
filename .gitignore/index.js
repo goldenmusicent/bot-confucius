@@ -337,12 +337,12 @@ client.on("message", async message => {
 
         var date    = new Date();
         var jour    = date.getDate();
-        var heure   = (date.getHours()-18);
+        var heure   = (date.getHours());
         var minutes = date.getMinutes();
 
 
         // Message Bonjour:o
-        if(heure == '11') {
+        if(heure === 11) {
           //if(minutes === 28){
             message.channel.send("Bonjours à tous, une bonne journée!");
           //}
