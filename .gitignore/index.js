@@ -336,7 +336,9 @@ client.on("message", async message => {
         
     // Ooooh nice, combined conditions. <3
     if(!heure || heure < 0 || heure > 24)
-      return message.reply("Quel heure est-il?");
+      return message.reply("Quel heure est-il? +tm [heure]");
+
+    message.channel.send("Debug 0");
 
     var interval = setInterval (function () {
 
