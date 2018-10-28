@@ -312,7 +312,7 @@ client.on("message", async message => {
     
     var interval = setInterval (function () {
 
-        // Détection des information de temps jours et mois!!!
+        // Détection des informatione temps jours et mois!!!
         var date    = new Date(); 
         var jour    = date.getDate();
         var joursem  = date.getDay(); //Dimanche = 0
@@ -321,7 +321,7 @@ client.on("message", async message => {
 
         // Message Bonjour: 
         if(heure === 9) {
-          if(minutes === jour){
+          if(minutes === 58){
             switch (joursem){
             case 0: message.channel.send("Bonjours à tous, je vous souhaite un bon Dimanche!");
                     break;
