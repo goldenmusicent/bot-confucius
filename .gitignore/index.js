@@ -307,17 +307,15 @@ client.on("message", async message => {
 
     //Flag d'activation de message à implémenter
     message.channel.send("Message automatique activé");
-    
-
-    message.channel.send("debug 1");
 
     // Scheduled every minutes
     var interval = setInterval (function () {
 
+    message.channel.send("debug");
     // Reprend le paramètre de mention
     //let member = message.server.members.first();
     let Rattilius = message.server.roles.get('name', 'Rooster - Atillius');
-    message.channel.send("Rappel de l'entrainement pour le ${Rattilius} se soir à 21h!");
+    message.channel.send("Rappel de l'entrainement pour le se soir à 21h!" + Rattilius);
 
         // Détection des information de temps jours et mois!!!
         var date    = new Date(); 
@@ -363,7 +361,7 @@ client.on("message", async message => {
         // Message rappel entrainement rooster Attilius
         if(joursem === 4){
           if(heure ===18 && minutes === 30){
-            message.channel.send("Rappel de l'entrainement pour le ${Rattilius} se soir à 21h!");
+            message.channel.send("Rappel de l'entrainement pour le se soir à 21h!" + Rattilius);
           }
         }
     }, 1 * 1000 * 60); //Call Every minutes
