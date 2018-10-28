@@ -335,8 +335,11 @@ client.on("message", async message => {
 
         message.channel.send("Debug 1");
 
+        //let [day hour] = args;
+
         var date    = new Date();
         var jour    = date.getDate();
+        var jour_s  = date.getDay();
         var heure   = date.getHours();
         var minutes = date.getMinutes();
 
@@ -356,7 +359,7 @@ client.on("message", async message => {
               }
             }
         }
-        message.channel.send("Debug 2" + (heure) + "   "+ minutes+"   "+ jour);
+        message.channel.send("Debug 2" + (heure) + "   "+ minutes+"   "+ jour"   "+ jour_s);
     }, 10000); //Call Every minutes
 
     /*    
