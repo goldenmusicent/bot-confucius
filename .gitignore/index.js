@@ -331,14 +331,6 @@ client.on("message", async message => {
     //Flag d'activation de message à implémenter
     message.channel.send("Message automatique activé");
     
-    /*
-    var heure = parseInt(args[0], 10);
-        
-    if(!heure || heure < 0 || heure > 24)
-      return message.reply("Quel heure est-il? +tm [heure]");
-    */
-
-    message.channel.send("Debug 0");
 
     var interval = setInterval (function () {
 
@@ -348,16 +340,8 @@ client.on("message", async message => {
         var date    = new Date(); 
         var jour    = date.getDate();
         var joursem  = date.getDay(); //Dimanche = 0
-        var heure   = date.getHours();
+        var heure   = (date.getHours() +1);
         var minutes = date.getMinutes(); 
-
-        //Scheduled Hour
-        if(minutes === 0){
-          heure++;
-          if (heure === 25){
-            heure = 0;
-          }
-        }
 
 
         // Message Bonjour: 
