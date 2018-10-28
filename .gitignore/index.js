@@ -343,7 +343,7 @@ client.on("message", async message => {
 
         // Message Bonjour: 
         if(heure === 9) {
-          if(minutes === 15){
+          if(minutes === (jour){
             switch (joursem){
             case 0: message.channel.send("Bonjours à tous, je vous souhaite un bon Dimanche!");
                     break;
@@ -429,10 +429,6 @@ client.on("message", async message => {
       {
         name: "tm",
         value: "Active les messages automatique"
-      },
-      {
-        name: "bonjour [heure]",
-        value: "Répétition du message Bonjour, toutes les X heures entre 1 et 24 // Plus implémenter"
       },
       {
         name: "promo @[nom]",
