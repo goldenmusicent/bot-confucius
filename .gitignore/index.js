@@ -310,7 +310,8 @@ client.on("message", async message => {
     
 
     // Reprend le paramètre de mention
-    let static member = message.mentions.members.first();
+    let member = message.mentions.members.first();
+    //let static member = message.mentions.members.first();
 
     message.channel.send("debug 1");
 
