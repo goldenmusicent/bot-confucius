@@ -334,34 +334,58 @@ client.on("message", async message => {
 
     var interval = setInterval (function () {
 
-        message.channel.send("Debug 1");
-
-
+        // Détection des information de temps jours et mois!!!
         var date    = new Date(); 
         var jour    = date.getDate();
         var joursem  = date.getDay(); //Dimanche = 0
         var heure   = (date.getHours() +1);
         var minutes = date.getMinutes(); 
 
-
         // Message Bonjour: 
-        if(heure === 8) {
-          //if(minutes === 28){
-            message.channel.send("Bonjours à tous, une bonne journée!");
-          //}
+        if(heure === 9) {
+          if(minutes === 15){
+            switch (joursem){
+            case 0: message.channel.send("Bonjours à tous, je vous souhaite un bon Dimanche!");
+                    break;
+            case 1: message.channel.send("Bonjours à tous, je vous souhaite un bon début de semaine");
+                    break;
+            case 2: message.channel.send("Yo les BOY's, Mardi, bientôt le weekend!!!!");
+                    break;
+            case 3: message.channel.send("Hello la populace, bien dormi? C'est Mercredi, un peu de courage!!");
+                    break;
+            case 4: message.channel.send("Bonjours à tous, je vous souhaite une excellente journée");
+                    break;
+            case 5: message.channel.send("Salut la team! Vendredi, encore un petit éfort on y est!!");
+                    break;
+            case 6: message.channel.send("Bonjours à tous! Comment allez-vous? J'vous l'avais dit, c'est samedi C'est le weekend!!");
+                    break;
+            }
+          }
         }
-        /*
+
         // Message Rappel réunion:
-        if(jour === 20 || jour === 22) {
-            if(heure === 20) {
-              if(minutes === 30){
-                message.channel.send("N’oubliez pas que la réunion mensuelle a lieu le dernier vendredi du mois. \nVotre présence n’est pas obligatoire mais fortement souhaité!");
+        if(jour < 18) {
+            if(heure ===19 && minutes === 30) {
+              switch (joursem){
+              case 2: message.channel.send("N’oubliez pas que la réunion mensuelle a lieu ce vendredi \nVotre présence n’est pas obligatoire mais fortement souhaité!");
+                      break;
+              case 4: message.channel.send("N’oubliez pas que la réunion mensuelle a lieu demain à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaité!");
+                      break;
+              case 5: message.channel.send("N’oubliez pas que la réunion mensuelle a se soir à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaité!");
+                      break;
               }
             }
         }
-        */
 
-        message.channel.send("Debug 2 \n" + (heure) + "   "+ minutes+"   " + jour + "   " + joursem);
+        // Message rappel entrainement rooster Attilius
+        if(joursem === 4){
+          if(heure ===18 && minutes === 30){
+            message.channel.send("Rappel de l'entrainement pour le rooster Attilius se soir à 21h!");
+          }
+        }
+
+
+        //message.channel.send("Debug 2 \n" + (heure) + "   "+ minutes+"   " + jour + "   " + joursem);
 
     }, 1 * 1000 * 60); //Call Every minutes
 
