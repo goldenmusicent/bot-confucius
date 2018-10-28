@@ -312,6 +312,11 @@ client.on("message", async message => {
     
     var interval = setInterval (function () {
 
+
+        // Paramètre les mentions
+        let Rattilius = guild.roles.find('name', 'Rooster - Atillius');
+        message.channel.send("test   "+Rattilius);
+
         // Détection des informatione temps jours et mois!!!
         var date    = new Date(); 
         var jour    = date.getDate();
@@ -321,7 +326,7 @@ client.on("message", async message => {
 
         // Message Bonjour: 
         if(heure === 9) {
-          if(minutes === 58){
+          if(minutes === jour){
             switch (joursem){
             case 0: message.channel.send("Bonjours à tous, je vous souhaite un bon Dimanche!");
                     break;
