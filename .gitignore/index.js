@@ -330,16 +330,16 @@ client.on("message", async message => {
 
     //Flag d'activation de message à implémenter
     message.channel.send("Message automatique activé");
+    //let [day hour] = args;
 
     var interval = setInterval (function () {
 
         message.channel.send("Debug 1");
 
-        //let [day hour] = args;
 
         var date    = new Date();
         var jour    = date.getDate();
-        var jour_s  = date.getDay();
+        var joursem  = date.getDay();
         var heure   = date.getHours();
         var minutes = date.getMinutes();
 
@@ -359,7 +359,8 @@ client.on("message", async message => {
               }
             }
         }
-        message.channel.send("Debug 2" + (heure) + "   "+ minutes+"   "+ jour"   "+ jour_s);
+        message.channel.send("Debug 2" + (heure) + "   "+ minutes+"   "+ jour +"   "+ joursem);
+
     }, 10000); //Call Every minutes
 
     /*    
