@@ -330,7 +330,13 @@ client.on("message", async message => {
 
     //Flag d'activation de message à implémenter
     message.channel.send("Message automatique activé");
-    //let [day hour] = args;
+    
+    // get the delete count, as an actual number.
+    var heure = parseInt(args[0], 10);
+        
+    // Ooooh nice, combined conditions. <3
+    if(!deleteCount || deleteCount < 0 || deleteCount > 24)
+      return message.reply("Quel heure est-il?");
 
     var interval = setInterval (function () {
 
@@ -340,17 +346,25 @@ client.on("message", async message => {
         var date    = new Date();
         var jour    = date.getDate();
         var joursem  = date.getDay();
-        var heure   = date.getHours();
+        //var heure   = date.getHours();
         var minutes = date.getMinutes();
+
+        //Scheduled Hour
+        if(minutes === 0){
+          heure++;
+          if (heure === 25){
+            heure = 0;
+          }
+        }
 
 
         // Message Bonjour: 
-        if(heure === '12') {
+        if(heure === 8) {
           //if(minutes === 28){
             message.channel.send("Bonjours à tous, une bonne journée!");
           //}
         }
-
+        /*
         // Message Rappel réunion:
         if(jour === 20 || jour === 22) {
             if(heure === 20) {
@@ -359,9 +373,11 @@ client.on("message", async message => {
               }
             }
         }
+        */
+
         message.channel.send("Debug 2" + (heure) + "   "+ minutes+"   "+ jour +"   "+ joursem);
 
-    }, 10000); //Call Every minutes
+    }, 1 * 1000 * 60); //Call Every minutes
 
     /*    
       var interval = setInterval (function () {
