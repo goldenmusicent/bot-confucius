@@ -356,7 +356,7 @@ client.on("message", async message => {
               }
             }
         }
-        message.channel.send("Debug 2" + (heure) + "   "+ minutes);
+        message.channel.send("Debug 2" + (heure) + "   "+ minutes+"   "+ jour);
     }, 10000); //Call Every minutes
 
     /*    
