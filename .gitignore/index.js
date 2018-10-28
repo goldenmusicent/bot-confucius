@@ -310,8 +310,8 @@ client.on("message", async message => {
     
 
     // Reprend le paramètre de mention
-    let member = message.mentions.members.first();
-    //let static member = message.mentions.members.first();
+    let member1 = message.mentions.members.first();
+    const static member = member 1;
 
     message.channel.send("debug 1");
 
@@ -326,7 +326,7 @@ client.on("message", async message => {
         var minutes = date.getMinutes(); 
 
         // Message Bonjour: 
-        if(heure === 9 && minutes === jour){
+        if(heure === 9 && minutes === 37){
           switch (joursem){
           case 0: message.channel.send("Bonjours à tous, je vous souhaite un bon Dimanche!  " + member);
                   break;
