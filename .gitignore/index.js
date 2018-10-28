@@ -192,6 +192,7 @@ client.on("message", async message => {
 
 /* Rétrogradation joueurs le joeur */
   if(command === "retro") {
+
       // Détermine les rôles possible:
       let recrue  = message.guild.roles.find("name", "Recrue - ⭐");
       let membre  = message.guild.roles.find("name", "Membre - ⭐⭐");
@@ -203,6 +204,7 @@ client.on("message", async message => {
       // reprend le membre cité
       let member = message.mentions.members.first();
 
+      //Détermine son role actuel
 
       // Détermine son rôle futur
 
@@ -307,15 +309,8 @@ client.on("message", async message => {
 
     //Flag d'activation de message à implémenter
     message.channel.send("Message automatique activé");
-
-    // Scheduled every minutes
+    
     var interval = setInterval (function () {
-
-    message.channel.send("debug");
-    // Reprend le paramètre de mention
-    //let member = message.server.members.first();
-    let Rattilius = message.server.roles.get('name', 'Rooster - Atillius');
-    message.channel.send("Rappel de l'entrainement pour le se soir à 21h!" + Rattilius);
 
         // Détection des information de temps jours et mois!!!
         var date    = new Date(); 
@@ -325,22 +320,24 @@ client.on("message", async message => {
         var minutes = date.getMinutes(); 
 
         // Message Bonjour: 
-        if(heure === 9 && minutes === 37){
-          switch (joursem){
-          case 0: message.channel.send("Bonjours à tous, je vous souhaite un bon Dimanche!  ");
-                  break;
-          case 1: message.channel.send("Bonjours à tous, je vous souhaite un bon début de semaine  ");
-                  break;
-          case 2: message.channel.send("Yo les BOY's, Mardi, bientôt le weekend!!!!  ");
-                  break;
-          case 3: message.channel.send("Hello la populace, bien dormi? C'est Mercredi, un peu de courage!!  ");
-                  break;
-          case 4: message.channel.send("Bonjours à tous, je vous souhaite une excellente journée  ");
-                  break;
-          case 5: message.channel.send("Salut la team! Vendredi, encore un petit éfort on y est!!  ");
-                  break;
-           case 6: message.channel.send("Bonjours à tous! Comment allez-vous? J'vous l'avais dit, c'est samedi C'est le weekend!!  ");
-                  break;
+        if(heure === 9) {
+          if(minutes === jour){
+            switch (joursem){
+            case 0: message.channel.send("Bonjours à tous, je vous souhaite un bon Dimanche!");
+                    break;
+            case 1: message.channel.send("Bonjours à tous, je vous souhaite un bon début de semaine");
+                    break;
+            case 2: message.channel.send("Yo les BOY's, Mardi, bientôt le weekend!!!!");
+                    break;
+            case 3: message.channel.send("Hello la populace, bien dormi? C'est Mercredi, un peu de courage!!");
+                    break;
+            case 4: message.channel.send("Bonjours à tous, je vous souhaite une excellente journée");
+                    break;
+            case 5: message.channel.send("Salut la team! Vendredi, encore un petit éfort on y est!!");
+                    break;
+            case 6: message.channel.send("Bonjours à tous! Comment allez-vous? J'vous l'avais dit, c'est samedi C'est le weekend!!");
+                    break;
+            }
           }
         }
 
@@ -348,11 +345,11 @@ client.on("message", async message => {
         if(jour < 18) {
             if(heure ===19 && minutes === 30) {
               switch (joursem){
-              case 2: message.channel.send("N’oubliez pas que la réunion mensuelle a lieu ce vendredi \nVotre présence n’est pas obligatoire mais fortement souhaité!   ");
+              case 2: message.channel.send("N’oubliez pas que la réunion mensuelle a lieu ce vendredi \nVotre présence n’est pas obligatoire mais fortement souhaité!");
                       break;
-              case 4: message.channel.send("N’oubliez pas que la réunion mensuelle a lieu demain à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaité!   ");
+              case 4: message.channel.send("N’oubliez pas que la réunion mensuelle a lieu demain à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaité!");
                       break;
-              case 5: message.channel.send("N’oubliez pas que la réunion mensuelle a se soir à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaité!   ");
+              case 5: message.channel.send("N’oubliez pas que la réunion mensuelle a se soir à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaité!");
                       break;
               }
             }
@@ -361,7 +358,7 @@ client.on("message", async message => {
         // Message rappel entrainement rooster Attilius
         if(joursem === 4){
           if(heure ===18 && minutes === 30){
-            message.channel.send("Rappel de l'entrainement pour le se soir à 21h!" + Rattilius);
+            message.channel.send("Rappel de l'entrainement pour le rooster Attilius se soir à 21h!");
           }
         }
     }, 1 * 1000 * 60); //Call Every minutes
