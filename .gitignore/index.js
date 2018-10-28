@@ -307,23 +307,6 @@ client.on("message", async message => {
     }
   }
 
-  /* Message: Bonjour à tous, une bonne journée! programmé a intervalle régulier
-  if (command === "bonjour") { 
-
-    if ( var flag_bonjour_message = 0){
-      var flag_bonjour_message = 1;
-      message.channel.send("Message \"Bonjour\" automatique ON, chaque jours à 9h30");
-
-    }else{
-      var flag_bonjour_message = 0;
-      message.channel.send("Message \"Bonjour\" automatique OFF");
-    }
-
-    //effacement de la commande
-    message.delete();
-    }
-    */
-
 
   //Envoie de message programmées en date et en heures
   if (command === 'tm'){
@@ -343,7 +326,7 @@ client.on("message", async message => {
 
         // Message Bonjour: 
         if(heure === 9) {
-          if(minutes === (jour){
+          if(minutes === jour){
             switch (joursem){
             case 0: message.channel.send("Bonjours à tous, je vous souhaite un bon Dimanche!");
                     break;
