@@ -335,7 +335,7 @@ client.on("message", async message => {
     var heure = parseInt(args[0], 10);
         
     // Ooooh nice, combined conditions. <3
-    if(!deleteCount || deleteCount < 0 || deleteCount > 24)
+    if(!heure || heure < 0 || heure > 24)
       return message.reply("Quel heure est-il?");
 
     var interval = setInterval (function () {
@@ -343,11 +343,11 @@ client.on("message", async message => {
         message.channel.send("Debug 1");
 
 
-        var date    = new Date();
+        var date    = new Date(); 
         var jour    = date.getDate();
-        var joursem  = date.getDay();
+        var joursem  = date.getDay(); //Dimanche = 0
         //var heure   = date.getHours();
-        var minutes = date.getMinutes();
+        var minutes = date.getMinutes(); 
 
         //Scheduled Hour
         if(minutes === 0){
