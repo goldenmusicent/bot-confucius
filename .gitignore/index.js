@@ -421,7 +421,7 @@ client.on("message", async message => {
       return message.reply("Le règlement comprend 13 points!");
 
   	// Affichage du blame sur le général
-  	message.channel.send(member + "  a hérité d'un blâme");
+  	message.channel.send(member + "  a hérité d'un blâme  :sweat_smile: ");
 
   	// Envoie d'un message privé selon le règlements:
   	member.send("Malheureusement, ton comportement a entraîné un blâme. \n\nRaison:\n\n");
@@ -508,6 +508,10 @@ client.on("message", async message => {
       {
         name: "kick @[nom]",
         value: "Exclusion d'un membre, envoie d'un message privé selon grade"
+      },
+      {
+        name: "blame [num] @[nom]",
+        value: "Mentionne le blâme dans le général & Envoie un message privé à la personne concernée comprenant le point du règlement transgressé\n Prend en argument [num] le point du règlement concerné et le joueur"
       },
       
     ],
