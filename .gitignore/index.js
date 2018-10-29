@@ -318,7 +318,7 @@ client.on("message", async message => {
         var minutes = date.getMinutes(); 
 
         // Message Bonjour: 
-        if(heure === 9) {
+        if(heure === 8) {
           if(minutes === jour){
             switch (joursem){
             case 0: message.channel.send("Bonjours à tous, je vous souhaite un bon Dimanche!");
@@ -397,10 +397,65 @@ client.on("message", async message => {
 
     let allowedRole = message.guild.roles.find("name", "Recrue - ⭐");
     if (member.roles.has(allowedRole.id)) {
-      member.send("Malgrès toutes les qualités dont tu dispose, tu ne corresponds pas à ce que la team recherche. Merci pour ton intérêt, ta présence et ta volonté. Bonne route!");
+      member.send("Malgré toutes les qualités dont tu disposes, tu ne corresponds pas à ce que le team recherche. Merci pour ton intérêt, ta présence et ta volonté. Bonne route!");
     }else{
       member.send("Malheureusement nous devons nous séparer de toi. Bonne route!");
     }
+
+    //effacement de la commande
+    message.delete();
+  }
+
+
+
+  /* Blame d'un membre */
+  if (command === 'blame'){
+
+    var member= message.mentions.members.first();
+
+    // get the delete count, as an actual number.
+    const reglnb = parseInt(args[0], 10);
+        
+    // Ooooh nice, combined conditions. <3
+    if(!reglnb || reglnb < 1 || reglnb > 14)
+      return message.reply("Le règlement comprend 13 points!");
+
+  	// Affichage du blame sur le général
+  	message.channel.send(member + "  a hérité d'un blâme");
+
+  	// Envoie d'un message privé selon le règlements:
+  	member.send("Malheureusement, ton comportement a entraîné un blâme. \n\nRaison:\n\n");
+
+  	switch (reglnb){
+  		case 1: member.send("1 – Tous les membres sont égaux au sein de la team, et ce, quel que soit leur âge, leur nationalité, leur orientation sexuelle ou encore leur niveau de jeu.");
+  			break;
+		case 2: member.send("2 – Le respect est fondamental pour préserver un état d’esprit communautaire et jovial au sein de la team. Exemple : Diffamation, racisme, sexisme, harcèlement, propos ayant pour but d’humilier ou de rabaisser un autre membre, possible futur membre ou adversaire ne sera toléré et cela impliquera une radiation immédiate (témoignage de deux personnes nécessaire). \n \n2.1 – Le T-bag (ou toutes autres actes similaire) est interdit, même par inadvertance. L’abus des pratiques susmentionnées entrainera un blâme voire un renvoie. \n\n2.2 - Le TK (team kill) est à proscrire. En cas de TK (random vs TEAM) volontaire, l’exclusion est nécessaire. Le TK est toléré dans le cas ou l’exclusion n’est plus possible et que moins de 3 personnes de la team soient dans la partie. L’effet boule de neige est à éviter (Multi TK).");
+  			break;
+  		case 3: member.send("3 – La politesse est également de rigueur. Que ce soit en jeu, sur le tchat de groupe (Xbox live & Discord) ou sur le site G4G, un « bonjour », « s’il vous plait », et « merci » n’ont jamais fait de mal à quiconque et rendent les échanges plus agréables.");
+  			break;
+  		case 4: member.send("4 – La présence aux entrainements et matchs d’équipe (amicale – TS ou compétition - G4G – ESL) est obligatoire pour les membres désignés. Toute indisponibilité devra être signaler une semaine à l’avance sur le discord rubrique « absence » ou directement au manager du roaster (celui-ci en réfèrera sur le discord). En cas d’imprévu important de dernière minute, merci de prévenir en détaillant les raisons.");
+  			break;
+  		case 5: member.send("5 – Chaque fin de mois, une réunion de team a lieu (dernier vendredi du mois, sauf fêtes). Votre présence est grandement souhaitée. Vous serez mis au courant des objectifs accomplis durant ce mois, des prochains objectifs et vous pourrez faire part de vos souhaits, attentes et remarques.");
+  			break;
+  		case 6: member.send("6 – Le fair-play est une règle essentielle dans la pratique des jeux. N’insultez pas vos coéquipiers, n’ayez pas des coups de sang impromptus, félicitez vos adversaires dans la victoire comme dans la défaite. Perdre fait également partie des règles du jeu. Partez du principe que même Hercule s’est fait avoir.");
+  			break;
+  		case 7: member.send("7 – Chaque membre peut apporter sa pierre à l’édifice à condition que le projet présenté soit parfaitement étudié et clair. Les projets devront être présentés en respectant la chaine hiérarchique cf. Statut. Des arguments fondés et des exemples concis mettront davantage en avant votre projet. L’investissement est un devoir important au sein de la team, à condition que celui-ci soit destiné à l’ensemble des membres et réfléchi.");
+  			break;
+  		case 8: member.send("8 – Toute tentative de triche, quelle qu’elle soit, est prohibée et sera sanctionnée. Sachez qu’un bon joueur acquiert une expérience solide avec le temps et non par la duperie.");
+  			break;
+  		case 9: member.send("9 – Vous représentez une communauté. Les comportements égoïstes sont également à proscrire.");
+  			break;
+  		case 10: member.send("10 – Pour intégrer notre team, vous devez obligatoirement passer par une candidature et un entretien vocal avec un responsable (VIII Skyller ou VIII Cooper). Si votre candidature est validée, vous serez, durant deux semaines, en « Test ». Toute recrue devra montrer une totale transparence aux membres confirmés de la team. À la fin de ce délai, si le résultat est positif, vous serez Membre de la team « VENI VIDI VICI ».");
+  			break;
+  		case 11: member.send("11 – La team « VIII » ne tolérera pas le multi-team/Asso/structure, il est de votre seul ressort d’assurer vos engagements envers la team. Faire partie de deux teams à la fois ne sera pas possible chez nous.");
+  			break;
+  		case 12: member.send("12 – Tout membres de la team « VIII » devra obligatoirement avoir un gamertag commençant par « VIII » et arborer le logo officiel de la team « VIII » (figure 1, page 1).");
+  			break;
+  		case 13: member.send("13 – En cas de manquement au règlement, un blâme serra prononcé. Le deuxième manquement impliquera l’expulsion définitive.");
+  			break;
+  		case 14: member.send("14 – Le règlements est susceptible d’évoluer, tous les membres devront se tenir informer de l’évolution de ce dernier ainsi que l’évolution de tous les documents référencés dans le règlement.");
+  			break;
+  	}
 
     //effacement de la commande
     message.delete();
@@ -460,10 +515,9 @@ client.on("message", async message => {
     footer: {
       icon_url: client.user.avatarURL,
       text: "© Confucius"
-    }
-  }
-});
-
+	    }
+	  }
+	});
 
     //effacement de la commande
     message.delete();
