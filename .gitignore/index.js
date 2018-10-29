@@ -389,7 +389,7 @@ client.on("message", async message => {
     // Kick
     member.kick().then((member) => {
       // Successmessage
-      message.channel.send(":wave: " + member.displayName + " Ne correspond plus aux attentes de la team :point_right: ");
+      message.channel.send(":wave: " + member.displayName + " Ne correspond plus aux attentes de la team :point_right:  Bonne route à toi!");
     }).catch(() => {
       // Failmessage
       message.channel.send("Access Denied");
@@ -397,9 +397,9 @@ client.on("message", async message => {
 
     let allowedRole = message.guild.roles.find("name", "Recrue - ⭐");
     if (member.roles.has(allowedRole.id)) {
-      member.send("Malgrès toutes les qualités dont tu dispose, tu ne corresponds pas à ce que la team recherche. Merci pour ton intérêt, ta présence et ta volonté.");
+      member.send("Malgrès toutes les qualités dont tu dispose, tu ne corresponds pas à ce que la team recherche. Merci pour ton intérêt, ta présence et ta volonté. Bonne route!");
     }else{
-      member.send("Malheureusement nous devons nous séparer de toi.");
+      member.send("Malheureusement nous devons nous séparer de toi. Bonne route!");
     }
 
     //effacement de la commande
