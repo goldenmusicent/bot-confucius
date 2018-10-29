@@ -184,7 +184,8 @@ client.on("message", async message => {
 
       }else if (member.roles.has(leader.id)){
         await message.channel.send(member + "  Le statut de Leader est le statut suprème, seul dieu est au dessus!");
-
+      }else {
+        await message.channel.send(member + "  Spécifier le membre à promouvoir!");
       }
       //effacement de la commande
       message.delete();
@@ -264,6 +265,8 @@ client.on("message", async message => {
       }else if (member.roles.has(recrue.id)){
         await message.channel.send("Ne te méprend pas jeune padawan! Les recrues sont les pilliers de notre comunautée!");
 
+      }else {
+        await message.channel.send(member + "  Spécifier le membre à rétrogradé!");
       }
       //effacement de la commande
       message.delete();
@@ -310,7 +313,7 @@ client.on("message", async message => {
     //Flag d'activation de message à implémenter
     message.channel.send("Message automatique activé");
     
-    var interval = setInterval (function () {
+    var Automessage = setInterval (function () {
 
         // Détection des informatione temps jours et mois!!!
         var date    = new Date(); 
@@ -368,6 +371,48 @@ client.on("message", async message => {
   }
 
 
+  //Désactivation des messages programmées
+  if (command === 'tm-stop'){
+
+    //Flag d'activation de message à implémenter
+    message.channel.send("Message automatique désactivé");
+    
+    // Arrête le scheduler
+    clearInterval(Automessage);
+
+    //effacement de la commande
+    message.delete();
+  }
+
+
+
+  /* Exclusion d'un membre */
+  if (command === 'kick'){
+
+    // Easy way to get member object though mentions.
+    var member= message.mentions.members.first();
+    // Kick
+    member.kick().then((member) => {
+      // Successmessage
+      message.channel.send(":wave: " + member.displayName + " Ne correspond plus aux attentes de la team :point_right: ");
+    }).catch(() => {
+      // Failmessage
+      message.channel.send("Access Denied");
+    });
+
+    let allowedRole = message.guild.roles.find("name", "Recrue - ⭐");
+    if (member.roles.has(allowedRole.id)) {
+      member.send("Malgrès toutes les qualités dont tu dispose, tu ne corresponds pas à ce que la team recherche. Merci pour ton intérêt, ta présence et ta volonté.");
+    }else{
+      member.send("Malheureusement nous devons nous séparer de toi.");
+    }
+
+    //effacement de la commande
+    message.delete();
+  }
+
+
+
   /* Envoie la liste de commandes de Confucius[BOT] */
   if (command === "help") { 
     message.channel.send({embed: {
@@ -399,12 +444,20 @@ client.on("message", async message => {
         value: "Active les messages automatique"
       },
       {
+        name: "tm-stop",
+        value: "désactive les messages automatique"
+      },
+      {
         name: "promo @[nom]",
         value: "Promotion d’un joueur un grade au dessus, envoie message privé avec le logo"
       },
       {
         name: "retro @[nom]",
         value: "Rétrogradation d’un joueur un grade en dessous, envoie message privé avec le logo"
+      },
+      {
+        name: "kick @[nom]",
+        value: "Exclusion d'un membre, envoie d'un message privé selon grade"
       },
       
     ],
