@@ -184,8 +184,6 @@ client.on("message", async message => {
 
       }else if (member.roles.has(leader.id)){
         await message.channel.send(member + "  Le statut de Leader est le statut suprème, seul dieu est au dessus!");
-      }else {
-        await message.channel.send(member + "  Spécifier le membre à promouvoir!");
       }
       //effacement de la commande
       message.delete();
@@ -264,9 +262,6 @@ client.on("message", async message => {
 
       }else if (member.roles.has(recrue.id)){
         await message.channel.send("Ne te méprend pas jeune padawan! Les recrues sont les pilliers de notre comunautée!");
-
-      }else {
-        await message.channel.send(member + "  Spécifier le membre à rétrogradé!");
       }
       //effacement de la commande
       message.delete();
