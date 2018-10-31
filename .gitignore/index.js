@@ -60,11 +60,12 @@ client.on('guildMemberAdd', member => {
   // Affichage dans les logs
    message.guild.channels.find("name","logs").send({embed: {
       color: 0x00fb00,
-      description: "Le joueur " + member.user.username + " a rejoint la team VIII"
+      description: "Le joueur " + member + " a rejoint la team VIII"
    }});
 });
 
 /* Affichage de notification lorsqu'un joueurs quitte la team */
+/*
 client.on('guildMemberRemove', member => {
    // Affichage dans les logs
    message.guild.channels.find("name","logs").send({embed: {
@@ -72,7 +73,7 @@ client.on('guildMemberRemove', member => {
       description: "Le joueur " + member.user.username + " a quitté la team VIII"
    }});
 });
-
+*/
 
 
 /* Ajout - Effacement du Boat sur un guild */
