@@ -53,7 +53,7 @@ client.on('guildMemberAdd', member => {
   // Affichage dans les logs
    member.guild.channels.find("name","logs").send({embed: {
       color: 0x00fb00,
-      description: "Le joueur " + member.user.username + " a rejoint la team VIII"
+      description: "Le joueur **" + member.user.username + "** a rejoint la team VIII"
    }});
 });
 
@@ -460,7 +460,7 @@ client.on("message", async message => {
     // Kick
     member.kick().then((member) => {
       // Successmessage
-      message.channel.send(":wave: " + member.displayName + " Ne correspond plus aux attentes de la team :point_right:  Bonne route à toi!");
+      message.channel.send(":wave: ** " + member.displayName + "** Ne correspond plus aux attentes de la team :point_right:  Bonne route à toi!");
     }).catch(() => {
       // Failmessage
       message.channel.send("Access Denied");
@@ -595,6 +595,10 @@ client.on("message", async message => {
       {
         name: "blame [num] @[nom]",
         value: "Mentionne le blâme dans le général & Envoie un message privé à la personne concernée comprenant le point du règlement transgressé\n Prend en argument [num] le point du règlement concerné et le joueur"
+      },
+      {
+        name: "LOGs",
+        value: "Tout changement lié au joueurs est enregistré dans la rubrique **\"LOGs\" **"
       },
       
     ],
