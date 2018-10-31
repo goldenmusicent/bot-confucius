@@ -37,12 +37,6 @@ client.on('guildMemberAdd', member => {
   if (!channel) return;
   // Send the message, mentioning the member
   channel.send(`Salut ${member}, bienvenue dans la **VIII Familly** :tada::hugging: !`);
-
-  // Affichage dans les logs
-  message.guild.channels.find("name","logs").send({embed: {
-    color: 1127128,
-    description: "Le joueur ${member} vient d'arriver dans la team VIII"
-  }});
 });
 
 /* Définit le nouveau membre en recrue */
