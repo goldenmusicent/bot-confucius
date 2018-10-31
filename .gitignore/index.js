@@ -428,20 +428,20 @@ client.on("message", async message => {
   	message.channel.send(member + "  a hérité d'un blâme  :sweat_smile: ");
 
     // Affichage dans els log
-    client.channels.find('507201091012657186').send({embed: {
-    color: 3447003,
+    message.guild.channels.find("name","logs").send({embed: {
+      color: 3447003,
 
-    fields: [{
-        name: member,
-        value: "Hérite d'un blâme"
-      },
-    ],
-    timestamp: new Date(),
-    footer: {
-      text: "© VIII LOGs"
-    }
-  }
-});
+      fields: [{
+          name: member,
+          value: "Hérite d'un blâme"
+        },
+        ],
+        timestamp: new Date(),
+        footer: {
+          text: "© VIII LOGs"
+        }
+      }
+    });
 
   	// Envoie d'un message privé selon le règlements:
   	member.send("Malheureusement, ton comportement a entraîné un blâme. \n\nRaison:\n\n");
