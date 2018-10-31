@@ -37,6 +37,12 @@ client.on('guildMemberAdd', member => {
   if (!channel) return;
   // Send the message, mentioning the member
   channel.send(`Salut ${member}, bienvenue dans la **VIII Familly** :tada::hugging: !`);
+
+  // Affichage dans les logs
+  message.guild.channels.find("name","logs").send({embed: {
+    color: 1127128,
+    description: "Le joueur ${member} vient d'arriver dans la team VIII"
+  }});
 });
 
 /* Définit le nouveau membre en recrue */
@@ -436,7 +442,7 @@ client.on("message", async message => {
     // Affichage dans els logs
     message.guild.channels.find("name","logs").send({embed: {
       color: 14177041,
-      description: "Le joueur" + member + " à hérité d'un blâme!"
+      description: "Le joueur" + member + " a hérité d'un blâme!"
     }});
 
   	// Envoie d'un message privé selon le règlements:
