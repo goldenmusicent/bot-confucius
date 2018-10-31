@@ -154,6 +154,12 @@ client.on("message", async message => {
         let role_new = member.guild.roles.find(role => role.name === "Membre - ⭐⭐");
         member.addRole(role_new).catch(console.error);
 
+        // Affichage dans les logs
+    	message.guild.channels.find("name","logs").send({embed: {
+      		color: 0x00ffe9,
+      		description: "Le joueur" + member + " c'est fait promouvoir au niveau de Membre - ⭐⭐"
+    	}});
+
       }else if (member.roles.has(membre.id)){
         await message.channel.send(member + "  Bravo pour ta promotion en tant que **Elite - ⭐⭐⭐**! Soit en digne!");
         member.send("Soit fier de porter le blason d'Elite - ⭐⭐⭐ \n\n https://www.dropbox.com/s/2twgs18ed650lqd/RED%20-%203Stars.png?dl=0");
@@ -165,6 +171,12 @@ client.on("message", async message => {
         // Ajout du nouveaus statuts
         let role_new = member.guild.roles.find(role => role.name === "Elite - ⭐⭐⭐");
         member.addRole(role_new).catch(console.error);
+
+        // Affichage dans les logs
+    	message.guild.channels.find("name","logs").send({embed: {
+      		color: 0x00ffe9,
+      		description: "Le joueur" + member + " c'est fait promouvoir au niveau de Elite - ⭐⭐⭐"
+    	}});
 
       }else if (member.roles.has(elite.id)){
         await message.channel.send(member + "  Bravo pour ta promotion en tant que **Manager - ⭐⭐⭐⭐**! Soit en digne!");
@@ -179,6 +191,12 @@ client.on("message", async message => {
         let role_new = member.guild.roles.find(role => role.name === "Manager - ⭐⭐⭐⭐");
         member.addRole(role_new).catch(console.error);
 
+        // Affichage dans les logs
+    	message.guild.channels.find("name","logs").send({embed: {
+      		color: 0x00ffe9,
+      		description: "Le joueur" + member + " c'est fait promouvoir au niveau de Manager - ⭐⭐⭐⭐"
+    	}});
+
       }else if (member.roles.has(manager.id)){
         await message.channel.send(member + "  Bravo pour ta promotion en tant que **Leader - ⭐⭐⭐⭐⭐**! Soit en digne!");
         member.send("Soit fier de porter le blason de Leader - ⭐⭐⭐⭐⭐ \n\n https://www.dropbox.com/s/tnsvqrpcllm8bt6/RED%20-%205Stars.png?dl=0");
@@ -191,6 +209,12 @@ client.on("message", async message => {
         // Ajout du nouveaus statuts
         let role_new = member.guild.roles.find(role => role.name === "Leader - ⭐⭐⭐⭐⭐");
         member.addRole(role_new).catch(console.error);
+
+        // Affichage dans les logs
+    	message.guild.channels.find("name","logs").send({embed: {
+      		color: 0x00ffe9,
+      		description: "Le joueur" + member + " c'est fait promouvoir au niveau de Leader - ⭐⭐⭐⭐⭐"
+    	}});
 
       }else if (member.roles.has(pu.id)){
         await message.channel.send(member + "  Bravo pour ta promotion en tant que **Membre - ⭐⭐**! Soit en digne!");
@@ -240,8 +264,8 @@ client.on("message", async message => {
 
         // Affichage dans les logs
     	message.guild.channels.find("name","logs").send({embed: {
-      		color: 0xff0000,
-      		description: "Le joueur" + member + " c'est fait rétrogradé au niveau de Recrue - ⭐"
+      		color: 0x00ffe9,
+      		description: "Le joueur" + member + " c'est fait rétrograder au niveau de Recrue - ⭐"
     	}});
 
 
@@ -260,8 +284,8 @@ client.on("message", async message => {
 
         // Affichage dans les logs
     	message.guild.channels.find("name","logs").send({embed: {
-      		color: 0xff0000,
-      		description: "Le joueur" + member + " c'est fait rétrogradé au niveau de Membre - ⭐⭐"
+      		color: 0x00ffe9,
+      		description: "Le joueur" + member + " c'est fait rétrograder au niveau de Membre - ⭐⭐"
     	}});
 
       }else if (member.roles.has(manager.id)){
@@ -279,8 +303,8 @@ client.on("message", async message => {
 
 		// Affichage dans les logs
     	message.guild.channels.find("name","logs").send({embed: {
-      		color: 0xff0000,
-      		description: "Le joueur" + member + " c'est fait rétrogradé au niveau d'Elite - ⭐⭐⭐"
+      		color: 0x00ffe9,
+      		description: "Le joueur" + member + " c'est fait rétrograder au niveau d'Elite - ⭐⭐⭐"
     	}});
 
 
@@ -299,8 +323,8 @@ client.on("message", async message => {
 
         // Affichage dans les logs
     	message.guild.channels.find("name","logs").send({embed: {
-      		color: 0xff0000,
-      		description: "Le joueur" + member + " c'est fait rétrogradé au niveau de Manager - ⭐⭐⭐⭐"
+      		color: 0x00ffe9,
+      		description: "Le joueur" + member + " c'est fait rétrograder au niveau de Manager - ⭐⭐⭐⭐"
     	}});
 
       }else if (member.roles.has(recrue.id)){
