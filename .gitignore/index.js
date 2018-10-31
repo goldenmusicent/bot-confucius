@@ -430,7 +430,7 @@ client.on("message", async message => {
     // Affichage dans els logs
     message.guild.channels.find("name","logs").send({embed: {
       color: 3447003,
-      description: "HELLO!"
+      description: "Le joueur" + member + "à hérité d'un blâme!"
     }});
 
   	// Envoie d'un message privé selon le règlements:
