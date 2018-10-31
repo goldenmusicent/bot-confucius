@@ -406,6 +406,12 @@ client.on("message", async message => {
       member.send("Malheureusement nous devons nous séparer de toi. Bonne route!");
     }
 
+    // Affichage dans les logs
+    message.guild.channels.find("name","logs").send({embed: {
+      color: 14177041,
+      description: "Le joueur" + member + " c'est fait kick de la team VIII"
+    }});
+
     //effacement de la commande
     message.delete();
   }
@@ -429,8 +435,8 @@ client.on("message", async message => {
 
     // Affichage dans els logs
     message.guild.channels.find("name","logs").send({embed: {
-      color: 3447003,
-      description: "Le joueur" + member + "à hérité d'un blâme!"
+      color: 14177041,
+      description: "Le joueur" + member + " à hérité d'un blâme!"
     }});
 
   	// Envoie d'un message privé selon le règlements:
