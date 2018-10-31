@@ -15,7 +15,7 @@ const message = require("./message.json"); //contains the different server messa
 
 client.on("ready", () => {
   // This event will run if the bot starts, and logs in, successfully.
-  console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
+  //console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
   // Example of changing the bot's playing game to something useful. `client.user` is what the
   // docs refer to as the "ClientUser".
   client.user.setActivity(`Serving ${client.guilds.size} servers`);
@@ -35,12 +35,13 @@ client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'général');
   // Do nothing if the channel wasn't found on this server
   if (!channel) return;
-
+  /*
   // Affichage dans les logs
    message.guild.channels.find("name","logs").send({embed: {
       color: 0x00fb00,
       description: "Le joueur " + member.user.username + " a rejoint la team VIII"
    }});
+   */
 
   // Send the message, mentioning the member
   channel.send(`Salut ${member}, bienvenue dans la **VIII Familly** :tada::hugging: !`);
@@ -53,14 +54,14 @@ client.on("guildMemberAdd", function(member) {
 });
 
 /* Affichage de notification lorsqu'un joueurs quitte la team */
-client.on('guildMemberAdd', member => {
+client.on('guildMemberRemove', member => {
+	/*
    // Affichage dans les logs
    message.guild.channels.find("name","logs").send({embed: {
       color: 0xff0000,
       description: "Le joueur " + member.user.username + " a quitté la team VIII"
    }});
-
-
+   */
 });
 
 
