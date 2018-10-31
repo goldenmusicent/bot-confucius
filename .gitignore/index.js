@@ -427,8 +427,10 @@ client.on("message", async message => {
   	// Affichage du blame sur le général
   	message.channel.send(member + "  a hérité d'un blâme  :sweat_smile: ");
 
-    // Affichage dans els log
-    message.guild.channels.get("507201091012657186").sendMessage({embed: {
+    // Affichage dans els logs
+    message.guild.channels.get('507201091012657186').send("hell0");
+
+      /*{embed: {
       color: 3447003,
 
       fields: [{
@@ -441,7 +443,7 @@ client.on("message", async message => {
           text: "© VIII LOGs"
         }
       }
-    });
+    });*/
 
   	// Envoie d'un message privé selon le règlements:
   	member.send("Malheureusement, ton comportement a entraîné un blâme. \n\nRaison:\n\n");
