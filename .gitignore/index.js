@@ -35,6 +35,13 @@ client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'général');
   // Do nothing if the channel wasn't found on this server
   if (!channel) return;
+
+  // Affichage dans les logs
+   message.guild.channels.find("name","logs").send({embed: {
+      color: 0x00fb00,
+      description: "Le joueur " + member.user.username + " a rejoint la team VIII"
+   }});
+
   // Send the message, mentioning the member
   channel.send(`Salut ${member}, bienvenue dans la **VIII Familly** :tada::hugging: !`);
 });
@@ -43,6 +50,17 @@ client.on('guildMemberAdd', member => {
 client.on("guildMemberAdd", function(member) {
     let role = member.guild.roles.find(role => role.name === "Recrue - ⭐");
     member.addRole(role).catch(console.error);
+});
+
+/* Affichage de notification lorsqu'un joueurs quitte la team */
+client.on('guildMemberAdd', member => {
+   // Affichage dans les logs
+   message.guild.channels.find("name","logs").send({embed: {
+      color: 0xff0000,
+      description: "Le joueur " + member.user.username + " a quitté la team VIII"
+   }});
+
+
 });
 
 
