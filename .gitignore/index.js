@@ -347,7 +347,8 @@ client.on("message", async message => {
                       break;
               case 4: message.channel.send("N’oubliez pas que la réunion mensuelle a lieu demain à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaité!");
                       break;
-              case 5: message.channel.send("N’oubliez pas que la réunion mensuelle a se soir à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaité!");
+              case 5: message.channel.send("N’oubliez pas que la réunion mensuelle a se soir à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaité!");                             //Envoie le message dans le chanel "général"
+                      message.channel.get('490429183466405901').send("N’oubliez pas que la réunion mensuelle a se soir à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaité!");   //Envoie le message dans le chanel "organisation"
                       break;
               }
             }
@@ -356,7 +357,10 @@ client.on("message", async message => {
         // Message rappel entrainement rooster Attilius
         if(joursem === 4){
           if(heure ===18 && minutes === 30){
-            message.channel.send("Rappel de l'entrainement pour le rooster Attilius se soir à 21h!");
+            //Envoie le message dans le chanel "Roster Attilius"
+            message.channel.get('503464368957161490').send("Rappel de l'entrainement pour le rooster Attilius se soir à 21h!");
+            //Envoie le message dans le chanel "Roster Attilius"
+            //message.channel.send("Rappel de l'entrainement pour le rooster Attilius se soir à 21h!");
           }
         }
     }, 1 * 1000 * 60); //Call Every minutes
@@ -422,6 +426,22 @@ client.on("message", async message => {
 
   	// Affichage du blame sur le général
   	message.channel.send(member + "  a hérité d'un blâme  :sweat_smile: ");
+
+    // Affichage dans els log
+    message.channel.get('507201091012657186').send({embed: {
+    color: 3447003,
+
+    fields: [{
+        name: member,
+        value: "Hérite d'un blâme"
+      },
+    ],
+    timestamp: new Date(),
+    footer: {
+      text: "© VIII LOGs"
+    }
+  }
+});
 
   	// Envoie d'un message privé selon le règlements:
   	member.send("Malheureusement, ton comportement a entraîné un blâme. \n\nRaison:\n\n");
