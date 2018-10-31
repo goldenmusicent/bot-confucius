@@ -427,7 +427,7 @@ client.on("message", async message => {
 
     // Affichage dans les logs
     message.guild.channels.find("name","logs").send({embed: {
-      color: 14177041,
+      color: 0xff0000,
       description: "Le joueur" + member + " c'est fait kick de la team VIII"
     }});
 
