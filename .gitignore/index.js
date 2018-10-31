@@ -358,9 +358,9 @@ client.on("message", async message => {
         if(joursem === 4){
           if(heure ===18 && minutes === 30){
             //Envoie le message dans le chanel "Roster Attilius"
-            message.channel.get('503464368957161490').send("Rappel de l'entrainement pour le rooster Attilius se soir à 21h!");
+            //message.channel.get('503464368957161490').send("Rappel de l'entrainement pour le rooster Attilius se soir à 21h!");
             //Envoie le message dans le chanel "Roster Attilius"
-            //message.channel.send("Rappel de l'entrainement pour le rooster Attilius se soir à 21h!");
+            message.channel.send("Rappel de l'entrainement pour le rooster Attilius se soir à 21h!");
           }
         }
     }, 1 * 1000 * 60); //Call Every minutes
@@ -428,7 +428,7 @@ client.on("message", async message => {
   	message.channel.send(member + "  a hérité d'un blâme  :sweat_smile: ");
 
     // Affichage dans els log
-    message.guild.channels.find("name","logs").send({embed: {
+    message.guild.channels.find("507201091012657186").sendMessage({embed: {
       color: 3447003,
 
       fields: [{
