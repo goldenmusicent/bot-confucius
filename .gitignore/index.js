@@ -428,7 +428,7 @@ client.on("message", async message => {
   	message.channel.send(member + "  a hérité d'un blâme  :sweat_smile: ");
 
     // Affichage dans els log
-    message.guild.channels.find("507201091012657186").sendMessage({embed: {
+    message.guild.channels.get("507201091012657186").sendMessage({embed: {
       color: 3447003,
 
       fields: [{
