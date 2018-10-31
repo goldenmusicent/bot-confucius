@@ -53,7 +53,7 @@ client.on('guildMemberAdd', member => {
   // Affichage dans les logs
    member.guild.channels.find("name","logs").send({embed: {
       color: 0x00fb00,
-      description: "Le joueur ${member} a rejoint la team VIII"
+      description: "Le joueur " + member.user.username + " a rejoint la team VIII"
    }});
 });
 
@@ -62,7 +62,7 @@ client.on('guildMemberRemove', member => {
    // Affichage dans les logs
    member.guild.channels.find("name","logs").send({embed: {
       color: 0xff0000,
-      description: "Le joueur " + member.user.username + " a quitté la team VIII"
+      description: "Le joueur **" + member.user.username + "** a quitté la team VIII"
    }});
 });
 
@@ -223,8 +223,6 @@ client.on("message", async message => {
       // reprend le membre cité
       let member = message.mentions.members.first();
 
-      //Détermine son role actuel
-
       // Détermine son rôle futur
 
       if (member.roles.has(membre.id)){
@@ -240,6 +238,12 @@ client.on("message", async message => {
         let role_new = member.guild.roles.find(role => role.name === "Recrue - ⭐");
         member.addRole(role_new).catch(console.error);
 
+        // Affichage dans les logs
+    	message.guild.channels.find("name","logs").send({embed: {
+      		color: 0xff0000,
+      		description: "Le joueur" + member + " c'est fait rétrogradé au niveau de Recrue - ⭐"
+    	}});
+
 
       }else if (member.roles.has(elite.id)){
         await message.channel.send(member + "  Exige beaucoup de toi-même et attends peu des autres. Ainsi beaucoup d'ennuis te seront épargnés. Tu as été rétrogradé au grade de **Membre - ⭐⭐**");
@@ -254,6 +258,12 @@ client.on("message", async message => {
         let role_new = member.guild.roles.find(role => role.name === "Membre - ⭐⭐");
         member.addRole(role_new).catch(console.error);
 
+        // Affichage dans les logs
+    	message.guild.channels.find("name","logs").send({embed: {
+      		color: 0xff0000,
+      		description: "Le joueur" + member + " c'est fait rétrogradé au niveau de Membre - ⭐⭐"
+    	}});
+
       }else if (member.roles.has(manager.id)){
         await message.channel.send(member + "  Exige beaucoup de toi-même et attends peu des autres. Ainsi beaucoup d'ennuis te seront épargnés. Tu as été rétrogradé au grade de **Elite - ⭐⭐⭐**");
         member.send("Soit fier de porter le blason d'Elite - ⭐⭐⭐ \n\n https://www.dropbox.com/s/2twgs18ed650lqd/RED%20-%203Stars.png?dl=0");
@@ -267,6 +277,13 @@ client.on("message", async message => {
         let role_new = member.guild.roles.find(role => role.name === "Elite - ⭐⭐⭐");
         member.addRole(role_new).catch(console.error);
 
+		// Affichage dans les logs
+    	message.guild.channels.find("name","logs").send({embed: {
+      		color: 0xff0000,
+      		description: "Le joueur" + member + " c'est fait rétrogradé au niveau d'Elite - ⭐⭐⭐"
+    	}});
+
+
       }else if (member.roles.has(leader.id)){
         await message.channel.send(member + "  Exige beaucoup de toi-même et attends peu des autres. Ainsi beaucoup d'ennuis te seront épargnés. Tu as été rétrogradé au grade de **Manager - ⭐⭐⭐⭐**");
         member.send("Soit fier de porter le blason de Manager - ⭐⭐⭐⭐ \n\n https://www.dropbox.com/s/zjdlmuqn474o9en/RED%20-%204Stars.png?dl=0");
@@ -279,6 +296,12 @@ client.on("message", async message => {
         // Ajout du nouveaus statuts
         let role_new = member.guild.roles.find(role => role.name === "Manager - ⭐⭐⭐⭐");
         member.addRole(role_new).catch(console.error);
+
+        // Affichage dans les logs
+    	message.guild.channels.find("name","logs").send({embed: {
+      		color: 0xff0000,
+      		description: "Le joueur" + member + " c'est fait rétrogradé au niveau de Manager - ⭐⭐⭐⭐"
+    	}});
 
       }else if (member.roles.has(recrue.id)){
         await message.channel.send("Ne te méprend pas jeune padawan! Les recrues sont les pilliers de notre comunautée!");
@@ -455,7 +478,7 @@ client.on("message", async message => {
 
     // Affichage dans els logs
     message.guild.channels.find("name","logs").send({embed: {
-      color: 14177041,
+      color: 0xfffc00,
       description: "Le joueur" + member + " a hérité d'un blâme!"
     }});
 
