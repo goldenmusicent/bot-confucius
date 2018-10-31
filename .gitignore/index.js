@@ -415,7 +415,7 @@ client.on("message", async message => {
               case 4: message.channel.send("N’oubliez pas que la réunion mensuelle a lieu demain à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaité!");
                       break;
               case 5: message.channel.send("N’oubliez pas que la réunion mensuelle a se soir à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaité!");                             //Envoie le message dans le chanel "général"
-                      message.channel.get('490429183466405901').send("N’oubliez pas que la réunion mensuelle a se soir à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaité!");   //Envoie le message dans le chanel "organisation"
+                      message.guild.channels.find("name","organisation").send("N’oubliez pas que la réunion mensuelle a se soir à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaité!");   //Envoie le message dans le chanel "organisation"
                       break;
               }
             }
@@ -425,7 +425,7 @@ client.on("message", async message => {
         if(joursem === 4){
           if(heure ===18 && minutes === 30){
             //Envoie le message dans le chanel "Roster Attilius"
-            //message.channel.get('503464368957161490').send("Rappel de l'entrainement pour le rooster Attilius se soir à 21h!");
+            message.guild.channels.find("name","roster-attilius").send("Rappel de l'entrainement pour le rooster Attilius se soir à 21h!");
             //Envoie le message dans le chanel "Roster Attilius"
             message.channel.send("Rappel de l'entrainement pour le rooster Attilius se soir à 21h!");
           }
