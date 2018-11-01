@@ -377,7 +377,6 @@ client.on("message", async message => {
     
     var Automessage = setInterval (function () {
 
-
         // Détection des informatione temps jours et mois!!!
         var date    = new Date(); 
         var jour    = date.getDate();
@@ -387,24 +386,24 @@ client.on("message", async message => {
 
         // Message Bonjour: 
         if(heure === 8) {
-          if(minutes === jour){
+          //if(minutes === jour){
             switch (joursem){
-            case 0: message.channel.send("Bonjours à tous, je vous souhaite un bon Dimanche!");
-                    break;
-            case 1: message.channel.send("Bonjours à tous, je vous souhaite un bon début de semaine");
-                    break;
-            case 2: message.channel.send("Yo les BOY's, Mardi, bientôt le weekend!!!!");
-                    break;
-            case 3: message.channel.send("Hello la populace, bien dormi? C'est Mercredi, un peu de courage!!");
-                    break;
-            case 4: message.channel.send("Bonjours à tous, je vous souhaite une excellente journée");
-                    break;
-            case 5: message.channel.send("Salut la team! Vendredi, encore un petit éfort on y est!!");
-                    break;
-            case 6: message.channel.send("Bonjours à tous! Comment allez-vous? J'vous l'avais dit, c'est samedi C'est le weekend!!");
-                    break;
+            case 0: {message.channel.send("Bonjours à tous, je vous souhaite un bon Dimanche!");
+                    break;}
+            case 1: {message.channel.send("Bonjours à tous, je vous souhaite un bon début de semaine");
+                    break;}
+            case 2: {message.channel.send("Yo les BOY's, Mardi, bientôt le weekend!!!!");
+                    break;}
+            case 3: {message.channel.send("Hello la populace, bien dormi? C'est Mercredi, un peu de courage!!");
+                    break;}
+            case 4: {message.channel.send("Bonjours à tous, je vous souhaite une excellente journée");
+                    break;}
+            case 5: {message.channel.send("Salut la team! Vendredi, encore un petit éfort on y est!!");
+                    break;}
+            case 6: {message.channel.send("Bonjours à tous! Comment allez-vous? J'vous l'avais dit, c'est samedi C'est le weekend!!");
+                    break;}
             }
-          }
+          //}
         }
 
         // Message Rappel réunion:
