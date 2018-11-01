@@ -386,7 +386,7 @@ client.on("message", async message => {
 
         // Message Bonjour: 
         if(heure === 8) {
-          if(minutes === 20){
+          if(minutes === 30){
             switch (joursem){
             case 0: {message.channel.send("Bonjours à tous, je vous souhaite un bon Dimanche!");
                     break;}
