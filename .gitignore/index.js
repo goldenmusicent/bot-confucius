@@ -377,6 +377,7 @@ client.on("message", async message => {
     
     var Automessage = setInterval (function () {
 
+
         // Détection des informatione temps jours et mois!!!
         var date    = new Date(); 
         var jour    = date.getDate();
@@ -430,6 +431,9 @@ client.on("message", async message => {
             message.channel.send("Rappel de l'entrainement pour le rooster Attilius se soir à 21h!");
           }
         }
+
+        message.channel.send("jour: " + jour + "joursem: " + joursem + "heure: " + heure + "Minutes: " + minutes);
+
     }, 1 * 1000 * 60); //Call Every minutes
 
     //effacement de la commande
