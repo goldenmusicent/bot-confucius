@@ -380,13 +380,13 @@ client.on("message", async message => {
         // Détection des informatione temps jours et mois!!!
         var date    = new Date(); 
         var jour    = date.getDate();
-        var joursem  = date.getDay(); //Dimanche = 0
-        var heure   = (date.getHours() +1);
+        var joursem = date.getDay(); //Dimanche = 0
+        var heure   = (date.getHours() +1); //GMT + 1
         var minutes = date.getMinutes(); 
 
         // Message Bonjour: 
         if(heure === 8) {
-          //if(minutes === jour){
+          if(minutes === 20){
             switch (joursem){
             case 0: {message.channel.send("Bonjours à tous, je vous souhaite un bon Dimanche!");
                     break;}
@@ -403,20 +403,20 @@ client.on("message", async message => {
             case 6: {message.channel.send("Bonjours à tous! Comment allez-vous? J'vous l'avais dit, c'est samedi C'est le weekend!!");
                     break;}
             }
-          //}
+          }
         }
 
         // Message Rappel réunion:
         if(jour < 18) {
             if(heure ===19 && minutes === 30) {
               switch (joursem){
-              case 2: message.channel.send("N’oubliez pas que la réunion mensuelle a lieu ce vendredi \nVotre présence n’est pas obligatoire mais fortement souhaité!");
-                      break;
-              case 4: message.channel.send("N’oubliez pas que la réunion mensuelle a lieu demain à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaité!");
-                      break;
-              case 5: message.channel.send("N’oubliez pas que la réunion mensuelle a se soir à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaité!");                             //Envoie le message dans le chanel "général"
+              case 2: {message.channel.send("N’oubliez pas que la réunion mensuelle a lieu ce vendredi \nVotre présence n’est pas obligatoire mais fortement souhaité!");
+                      break;}
+              case 4: {message.channel.send("N’oubliez pas que la réunion mensuelle a lieu demain à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaité!");
+                      break;}
+              case 5: {message.channel.send("N’oubliez pas que la réunion mensuelle a se soir à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaité!");                             //Envoie le message dans le chanel "général"
                       message.guild.channels.find("name","organisation").send("N’oubliez pas que la réunion mensuelle a se soir à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaité!");   //Envoie le message dans le chanel "organisation"
-                      break;
+                      break;}
               }
             }
         }
@@ -431,7 +431,7 @@ client.on("message", async message => {
           }
         }
 
-        message.channel.send("jour: " + jour + "joursem: " + joursem + "heure: " + heure + "Minutes: " + minutes);
+        //message.channel.send("jour: " + jour + "  joursem: " + joursem + "  heure: " + heure + "  Minutes: " + minutes);
 
     }, 1 * 1000 * 60); //Call Every minutes
 
