@@ -422,8 +422,8 @@ client.on("message", async message => {
         }
 
         // Message rappel entrainement rooster Attilius
-        if(joursem === 5){
-          if(heure ===8 && minutes === 0){
+        if(joursem === 4){
+          if(heure === 18 && minutes === 30){
             //Envoie le message dans le chanel "Roster Attilius"
             //message.guild.channels.find("name","roster-attilius").send("Rappel de l'entrainement pour le rooster Attilius ce soir à 21h!");
             //Envoie le message dans le chanel "Roster Attilius"
