@@ -407,7 +407,7 @@ client.on("message", async message => {
         }
 
         // Message Rappel réunion:
-        if(jour < 18) {
+        if(jour > 18) {
             if(heure ===19 && minutes === 30) {
               switch (joursem){
               case 2: {message.channel.send("N’oubliez pas que la réunion mensuelle a lieu ce vendredi \nVotre présence n’est pas obligatoire mais fortement souhaitée!");
