@@ -422,12 +422,12 @@ client.on("message", async message => {
         }
 
         // Message rappel entrainement rooster Attilius
-        if(joursem === 4){
-          if(heure ===18 && minutes === 30){
+        if(joursem === 5){
+          if(heure ===8 && minutes === 0){
             //Envoie le message dans le chanel "Roster Attilius"
-            message.guild.channels.find("name","roster-attilius").send("Rappel de l'entrainement pour le rooster Attilius se soir à 21h!");
+            //message.guild.channels.find("name","roster-attilius").send("Rappel de l'entrainement pour le rooster Attilius ce soir à 21h!");
             //Envoie le message dans le chanel "Roster Attilius"
-            message.channel.send("Rappel de l'entrainement pour le rooster Attilius se soir à 21h!");
+            message.channel.send("Rappel de l'entrainement pour le rooster Attilius ce soir à 21h!");
           }
         }
 
