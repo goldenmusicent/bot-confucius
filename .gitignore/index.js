@@ -227,7 +227,7 @@ client.on("message", async message => {
         member.addRole(role_new).catch(console.error);
 
       }else if (member.roles.has(leader.id)){
-        await message.channel.send(member + "  Le statut de Leader est le statut suprème, seul dieu est au dessus!");
+        await message.channel.send(member + "  Le statut de Leader est le statut suprème, seul dieu est au-dessus!");
       }
       //effacement de la commande
       message.delete();
@@ -328,7 +328,7 @@ client.on("message", async message => {
     	}});
 
       }else if (member.roles.has(recrue.id)){
-        await message.channel.send("Ne te méprend pas jeune padawan! Les recrues sont les pilliers de notre comunautée!");
+        await message.channel.send("Ne te méprend pas jeune padawan! Les recrues sont les piliers de notre comunauté!");
       }
       //effacement de la commande
       message.delete();
@@ -350,7 +350,7 @@ client.on("message", async message => {
       // So we get our messages, and delete them. Simple enough, right?
       const fetched = await message.channel.fetchMessages({limit: deleteCount});
       message.channel.bulkDelete(fetched)
-      .catch(error => message.reply(`Impossible d'effecer les messages à cause de l'erreur: ${error}`));
+      .catch(error => message.reply(`Impossible d'effacer les messages à cause de l'erreur: ${error}`));
 
   }
 
@@ -373,7 +373,7 @@ client.on("message", async message => {
   if (command === 'tm'){
 
     //Flag d'activation de message à implémenter
-    message.channel.send("Message automatique activé");
+    message.channel.send("Messages automatiques activés");
     
     var Automessage = setInterval (function () {
 
@@ -388,19 +388,19 @@ client.on("message", async message => {
         if(heure === 8) {
           if(minutes === 30){
             switch (joursem){
-            case 0: {message.channel.send("Bonjours à tous, je vous souhaite un bon Dimanche!");
+            case 0: {message.channel.send("Bonjour à tous, je vous souhaite un bon Dimanche!");
                     break;}
-            case 1: {message.channel.send("Bonjours à tous, je vous souhaite un bon début de semaine");
+            case 1: {message.channel.send("Bonjour à tous, je vous souhaite un bon début de semaine");
                     break;}
             case 2: {message.channel.send("Yo les BOY's, Mardi, bientôt le weekend!!!!");
                     break;}
-            case 3: {message.channel.send("Hello la populace, bien dormi? C'est Mercredi, un peu de courage!!");
+            case 3: {message.channel.send("Hello la populace, c'est Mercredi, un peu de courage!!");
                     break;}
-            case 4: {message.channel.send("Bonjours à tous, je vous souhaite une excellente journée");
+            case 4: {message.channel.send("Bonjour à tous, je vous souhaite une excellente journée");
                     break;}
-            case 5: {message.channel.send("Salut la team! Vendredi, encore un petit éfort on y est!!");
+            case 5: {message.channel.send("Salut la team! Vendredi, encore un petit effort. On y est!!");
                     break;}
-            case 6: {message.channel.send("Bonjours à tous! Comment allez-vous? J'vous l'avais dit, c'est samedi C'est le weekend!!");
+            case 6: {message.channel.send("Bonjour à tous! Bon weekend!!");
                     break;}
             }
           }
@@ -410,12 +410,11 @@ client.on("message", async message => {
         if(jour < 18) {
             if(heure ===19 && minutes === 30) {
               switch (joursem){
-              case 2: {message.channel.send("N’oubliez pas que la réunion mensuelle a lieu ce vendredi \nVotre présence n’est pas obligatoire mais fortement souhaité!");
+              case 2: {message.channel.send("N’oubliez pas que la réunion mensuelle a lieu ce vendredi \nVotre présence n’est pas obligatoire mais fortement souhaitée!");
                       break;}
-              case 4: {message.channel.send("N’oubliez pas que la réunion mensuelle a lieu demain à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaité!");
+              case 4: {message.channel.send("N’oubliez pas que la réunion mensuelle a lieu demain à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaitée!");
                       break;}
-              case 5: {message.channel.send("N’oubliez pas que la réunion mensuelle a se soir à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaité!");                             //Envoie le message dans le chanel "général"
-                      message.guild.channels.find("name","organisation").send("N’oubliez pas que la réunion mensuelle a se soir à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaité!");   //Envoie le message dans le chanel "organisation"
+              case 5: {message.channel.send("N’oubliez pas que la réunion mensuelle a ce soir à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaitée!");    //Envoie le message dans le chanel "général"
                       break;}
               }
             }
@@ -444,7 +443,7 @@ client.on("message", async message => {
   if (command === 'tm-stop'){
 
     //Flag d'activation de message à implémenter
-    message.channel.send("Message automatique désactivé");
+    message.channel.send("Messages automatiques désactivés");
     
     // Arrête le scheduler
     clearInterval(Automessage);
@@ -560,48 +559,48 @@ client.on("message", async message => {
     title: "HELP - Confucius",
     description: "Les commande ci-dessous précédé d'un \"+\" permettent d'effectuer différentes actions",
     fields: [{
-        name: "help",
-        value: "Affiche l'interface d'aide au commande confucius"
+        name: "**help**",
+        value: "Affiche l'interface d'aide au commandes confucius"
       },
       {
-        name: "purge [nombre]",
+        name: "**purge [nombre]**",
         value: "Nombre de message a supprimer, entre 2 et 100"
       },
       {
-        name: "ping",
-        value: "Renvoie un message avec le ping, et le Ping API de liaison du bot"
+        name: "**ping**",
+        value: "Renvoie un message avec le ping, et le Ping API de liaison du Bot"
       },
       {
-        name: "say [message]",
+        name: "**say [message]**",
         value: "Envoie le message dans le générale"
       },
       {
-        name: "tm",
-        value: "Active les messages automatique"
+        name: "**tm**",
+        value: "Active les messages automatiques"
       },
       {
-        name: "tm-stop",
-        value: "désactive les messages automatique"
+        name: "**tm-stop**",
+        value: "désactive les messages automatiques"
       },
       {
-        name: "promo @[nom]",
-        value: "Promotion d’un joueur un grade au dessus, envoie message privé avec le logo"
+        name: "**promo @[nom]**",
+        value: "Promotion d’un joueur un grade au-dessus, envoie message privé avec le logo"
       },
       {
-        name: "retro @[nom]",
+        name: "**retro @[nom]**",
         value: "Rétrogradation d’un joueur un grade en dessous, envoie message privé avec le logo"
       },
       {
-        name: "kick @[nom]",
+        name: "**kick @[nom]**",
         value: "Exclusion d'un membre, envoie d'un message privé selon grade"
       },
       {
-        name: "blame [num] @[nom]",
-        value: "Mentionne le blâme dans le général & Envoie un message privé à la personne concernée comprenant le point du règlement transgressé\n Prend en argument [num] le point du règlement concerné et le joueur"
+        name: "**blame [num] @[nom]**",
+        value: "Mentionne le blâme dans le général & envoie un message privé à la personne concernée comprenant le point du règlement transgressé\n Prend en argument [num] le point du règlement concerné et le joueur"
       },
       {
-        name: "LOGs",
-        value: "Tout changement lié au joueurs est enregistré dans la rubrique **\"LOGs\" **"
+        name: "**LOGs**",
+        value: "Tout changement lié aux joueurs est enregistré sous la rubrique **\"LOGs\" **"
       },
       
     ],
@@ -625,4 +624,3 @@ client.on("message", async message => {
 }});
 
 client.login(config.token);
-
