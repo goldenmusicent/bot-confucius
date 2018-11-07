@@ -382,7 +382,6 @@ client.on("message", async message => {
     //Flag d'activation de message à implémenter
     message.channel.send("Messages automatiques activés");
 	automessage = setTimeout(automessage_tm, 1 * 1000 * 60); //Call every minutes
-}
     //effacement de la commande
     message.delete();
   }
