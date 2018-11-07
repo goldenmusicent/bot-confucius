@@ -625,7 +625,7 @@ function automessage_tm(message1) {
             message.channel.send("Rappel de l'entrainement pour le rooster Attilius ce soir à 21h!");
         }
 
-        message.channel.send("jour: " + jour + "  joursem: " + joursem + "  heure: " + heure + "  Minutes: " + minutes);
+        message1.channel.send("jour: " + jour + "  joursem: " + joursem + "  heure: " + heure + "  Minutes: " + minutes);
 
         automessage = setTimeout(automessage_tm(message1), 1 * 1000 * 60); //Call every minute
 }
