@@ -379,10 +379,67 @@ client.on("message", async message => {
   //Envoie de message programmées en date et en heures
   if (command === 'tm'){
 
-  	var message1 = message;
     //Flag d'activation de message à implémenter
     message.channel.send("Messages automatiques activés");
-	automessage = setTimeout(automessage_tm(message1), 1 * 1000 * 60); //Call every minutes
+    
+    var Automessage = setInterval (function () {
+
+        // Détection des informatione temps jours et mois!!!
+        var date    = new Date(); 
+        var jour    = date.getDate();
+        var joursem = date.getDay(); //Dimanche = 0
+        var heure   = (date.getHours() +1); //GMT + 1
+        var minutes = date.getMinutes(); 
+
+        if (heure === 1){
+        	flag_auto_bj = 1;
+        }
+
+        // Message Bonjour: 
+        if(heure === 8 && minutes > 25 && flag_auto_bj === 1) {
+            switch (joursem){
+            case 0: {message.channel.send("Bonjour à tous, je vous souhaite un bon Dimanche!");
+                    break;}
+            case 1: {message.channel.send("Bonjour à tous, je vous souhaite un bon début de semaine");
+                    break;}
+            case 2: {message.channel.send("Yo les BOY's, Mardi, bientôt le weekend!!!!");
+                    break;}
+            case 3: {message.channel.send("Hello la populace, c'est Mercredi, un peu de courage!!");
+                    break;}
+            case 4: {message.channel.send("Bonjour à tous, je vous souhaite une excellente journée");
+                    break;}
+            case 5: {message.channel.send("Salut la team! Vendredi, encore un petit effort. On y est!!");
+                    break;}
+            case 6: {message.channel.send("Bonjour à tous! Bon weekend!!");
+                    break;}
+          }
+          flag_auto_bj = 0;
+        }
+
+        // Message Rappel réunion:
+        if(jour > 18 && heure ===19 && minutes === 30) {
+              switch (joursem){
+              case 2: {message.channel.send("N’oubliez pas que la réunion mensuelle a lieu ce vendredi \nVotre présence n’est pas obligatoire mais fortement souhaitée!");
+                      break;}
+              case 4: {message.channel.send("N’oubliez pas que la réunion mensuelle a lieu demain à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaitée!");
+                      break;}
+              case 5: {message.channel.send("N’oubliez pas que la réunion mensuelle a ce soir à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaitée!");    //Envoie le message dans le chanel "général"
+                      break;}
+              }
+        }
+
+        // Message rappel entrainement rooster Attilius
+        if(joursem === 4 && heure === 18 && minutes === 30){
+            //Envoie le message dans le chanel "Roster Attilius"
+            //message.guild.channels.find("name","roster-attilius").send("Rappel de l'entrainement pour le rooster Attilius ce soir à 21h!");
+            //Envoie le message dans le chanel "Roster Attilius"
+            message.channel.send("Rappel de l'entrainement pour le rooster Attilius ce soir à 21h!");
+        }
+
+        //message.channel.send("jour: " + jour + "  joursem: " + joursem + "  heure: " + heure + "  Minutes: " + minutes);
+
+    }, 1 * 1000 * 60); //Call Every minutes
+
     //effacement de la commande
     message.delete();
   }
@@ -571,63 +628,5 @@ client.on("message", async message => {
        m = await message.channel.send("Permissions insuffisantes!");
        message.delete();
 }});
-
-function automessage_tm(message1) {
-    // Détection des informatione temps jours et mois!!!
-        var date    = new Date(); 
-        var jour    = date.getDate();
-        var joursem = date.getDay(); //Dimanche = 0
-        var heure   = (date.getHours() +1); //GMT + 1
-        var minutes = date.getMinutes(); 
-
-        if (heure === 1){
-        	flag_auto_bj = 1;
-        }
-
-        // Message Bonjour: 
-        if(heure === 8 && minutes > 25 && flag_auto_bj === 1) {
-            switch (joursem){
-            case 0: {message.channel.send("Bonjour à tous, je vous souhaite un bon Dimanche!");
-                    break;}
-            case 1: {message.channel.send("Bonjour à tous, je vous souhaite un bon début de semaine");
-                    break;}
-            case 2: {message.channel.send("Yo les BOY's, Mardi, bientôt le weekend!!!!");
-                    break;}
-            case 3: {message.channel.send("Hello la populace, c'est Mercredi, un peu de courage!!");
-                    break;}
-            case 4: {message.channel.send("Bonjour à tous, je vous souhaite une excellente journée");
-                    break;}
-            case 5: {message.channel.send("Salut la team! Vendredi, encore un petit effort. On y est!!");
-                    break;}
-            case 6: {message.channel.send("Bonjour à tous! Bon weekend!!");
-                    break;}
-          }
-          flag_auto_bj = 0;
-        }
-
-        // Message Rappel réunion:
-        if(jour > 18 && heure ===19 && minutes === 30) {
-              switch (joursem){
-              case 2: {message.channel.send("N’oubliez pas que la réunion mensuelle a lieu ce vendredi \nVotre présence n’est pas obligatoire mais fortement souhaitée!");
-                      break;}
-              case 4: {message.channel.send("N’oubliez pas que la réunion mensuelle a lieu demain à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaitée!");
-                      break;}
-              case 5: {message.channel.send("N’oubliez pas que la réunion mensuelle a ce soir à 21h sur le Discord rubrique vocal \nVotre présence n’est pas obligatoire mais fortement souhaitée!");    //Envoie le message dans le chanel "général"
-                      break;}
-              }
-        }
-
-        // Message rappel entrainement rooster Attilius
-        if(joursem === 4 && heure === 18 && minutes === 30){
-            //Envoie le message dans le chanel "Roster Attilius"
-            //message.guild.channels.find("name","roster-attilius").send("Rappel de l'entrainement pour le rooster Attilius ce soir à 21h!");
-            //Envoie le message dans le chanel "Roster Attilius"
-            message.channel.send("Rappel de l'entrainement pour le rooster Attilius ce soir à 21h!");
-        }
-
-        message1.channel.send("jour: " + jour + "  joursem: " + joursem + "  heure: " + heure + "  Minutes: " + minutes);
-
-        automessage = setTimeout(automessage_tm(message1), 1 * 1000 * 60); //Call every minute
-}
 
 client.login(config.token);
