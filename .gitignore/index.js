@@ -379,9 +379,10 @@ client.on("message", async message => {
   //Envoie de message programmées en date et en heures
   if (command === 'tm'){
 
+  	var message1 = message;
     //Flag d'activation de message à implémenter
     message.channel.send("Messages automatiques activés");
-	automessage = setTimeout(automessage_tm(message), 1 * 1000 * 60); //Call every minutes
+	automessage = setTimeout(automessage_tm(message1), 1 * 1000 * 60); //Call every minutes
     //effacement de la commande
     message.delete();
   }
@@ -571,7 +572,7 @@ client.on("message", async message => {
        message.delete();
 }});
 
-function automessage_tm(message) {
+function automessage_tm(message1) {
     // Détection des informatione temps jours et mois!!!
         var date    = new Date(); 
         var jour    = date.getDate();
@@ -621,12 +622,12 @@ function automessage_tm(message) {
             //Envoie le message dans le chanel "Roster Attilius"
             //message.guild.channels.find("name","roster-attilius").send("Rappel de l'entrainement pour le rooster Attilius ce soir à 21h!");
             //Envoie le message dans le chanel "Roster Attilius"
-            channel.send("Rappel de l'entrainement pour le rooster Attilius ce soir à 21h!");
+            message.channel.send("Rappel de l'entrainement pour le rooster Attilius ce soir à 21h!");
         }
 
         message.channel.send("jour: " + jour + "  joursem: " + joursem + "  heure: " + heure + "  Minutes: " + minutes);
 
-        automessage = setTimeout(automessage_tm(message), 1 * 1000 * 60); //Call every minute
+        automessage = setTimeout(automessage_tm(message1), 1 * 1000 * 60); //Call every minute
 }
 
 client.login(config.token);
