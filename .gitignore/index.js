@@ -621,10 +621,11 @@ function automessage_tm() {
             //Envoie le message dans le chanel "Roster Attilius"
             //message.guild.channels.find("name","roster-attilius").send("Rappel de l'entrainement pour le rooster Attilius ce soir à 21h!");
             //Envoie le message dans le chanel "Roster Attilius"
-            message.channel.send("Rappel de l'entrainement pour le rooster Attilius ce soir à 21h!");
+            channel.send("Rappel de l'entrainement pour le rooster Attilius ce soir à 21h!");
         }
 
         message.channel.send("jour: " + jour + "  joursem: " + joursem + "  heure: " + heure + "  Minutes: " + minutes);
+
         automessage = setTimeout(automessage_tm, 1 * 1000 * 60); //Call every minute
 }
 
