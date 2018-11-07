@@ -381,7 +381,7 @@ client.on("message", async message => {
 
     //Flag d'activation de message à implémenter
     message.channel.send("Messages automatiques activés");
-	automessage = setTimeout(automessage_tm, 1 * 1000 * 60); //Call every minutes
+	automessage = setTimeout(automessage_tm(message), 1 * 1000 * 60); //Call every minutes
     //effacement de la commande
     message.delete();
   }
@@ -571,7 +571,7 @@ client.on("message", async message => {
        message.delete();
 }});
 
-function automessage_tm() {
+function automessage_tm(message) {
     // Détection des informatione temps jours et mois!!!
         var date    = new Date(); 
         var jour    = date.getDate();
@@ -626,7 +626,7 @@ function automessage_tm() {
 
         message.channel.send("jour: " + jour + "  joursem: " + joursem + "  heure: " + heure + "  Minutes: " + minutes);
 
-        automessage = setTimeout(automessage_tm, 1 * 1000 * 60); //Call every minute
+        automessage = setTimeout(automessage_tm(message), 1 * 1000 * 60); //Call every minute
 }
 
 client.login(config.token);
